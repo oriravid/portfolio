@@ -1,0 +1,39 @@
+html,
+input {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.8); }
+
+body {
+  line-height: 1.5; }
+
+a,
+a:link,
+a:visited {
+  color: #0070c9; }
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+  margin-bottom: 10px; }
+
+h1 {
+  font-size: 34px;
+  font-weight: 700; }
+
+h2 {
+  font-size: 26px;
+  font-weight: 700; }
+
+h3 {
+  font-size: 20px;
+  font-weight: 700; }
+
+.pointer:hover {
+  cursor: pointer; }
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: gray; }

@@ -1,0 +1,67 @@
+// VARIABLES
+////////////////////////////////////////////////////////////////////////////////
+$border-color-1: rgba(224, 224, 224, 0.75);
+$border-color-2: #e0e0e0;
+$box-shadow-1: 5px 5px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-2: 5px 5px 20px rgba(0, 0, 0, 0.15);
+$box-shadow-3: 5px 5px 20px rgba(0, 0, 0, 0.3);
+$box-shadow-4: 5px 5px 20px rgba(0, 0, 0, 0.5);
+$text-color: rgba(0, 0, 0, 0.8);
+$error: rgb(190, 40, 40);
+$link: #0070c9;
+$gray-text-1: rgba(60, 60, 67, 0.4);
+$gray-text-2: rgba(60, 60, 67, 0.6);
+
+// GENERAL
+////////////////////////////////////////////////////////////////////////////////
+html,
+input {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+body {
+    line-height: 1.5;
+}
+
+a,
+a:link,
+a:visited {
+    color: $link;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+// APP
+////////////////////////////////////////////////////////////////////////////////
+
+.app {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: gray;
+}
