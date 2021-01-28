@@ -1,6 +1,6 @@
 html,
 input {
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: rgba(0, 0, 0, 0.8); }
 
 body {
@@ -33,7 +33,62 @@ h3 {
 .pointer:hover {
   cursor: pointer; }
 
-.app {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: gray; }
+header {
+  position: sticky;
+  top: 0;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8eb3b1; }
+
+#header-left {
+  flex: 0 0 175px;
+  margin-right: 25px; }
+
+#avatar {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%; }
+
+#title {
+  font-family: "Oswald", sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase; }
+
+#subtitle {
+  color: white; }
+
+#nav {
+  display: flex; }
+
+.section {
+  padding: 10px;
+  border: 2px solid rgba(224, 224, 224, 0.75);
+  border-radius: 7.5px;
+  margin-bottom: 25px; }
+
+#post-feed-filter {
+  display: flex; }
+
+#post-feed-type-list {
+  display: flex; }
+
+#post-feed-list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 12.5px; }
+
+.post-feed-list-item {
+  flex: 1 1 20%;
+  margin: 12.5px; }
+
+.post-feed-list-item.music {
+  flex-grow: 0;
+  filter: grayscale(0.5); }
+
+#post-feed-list li img {
+  height: 100%;
+  width: 100%; }
