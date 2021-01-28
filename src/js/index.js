@@ -1,23 +1,26 @@
 //ext
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 //int - components
 import Header from "./components/header";
-import Home from "./components/home";
+import Projects from "./components/projects";
 import About from "./components/about";
 
 document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(
         <HashRouter>
             <div id="app">
-                <Header />
+                <header>{/* <Header /> */}</header>
                 <main>
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/about" component={About} />
-                    </Switch>
+                    <Projects />
+                    <About />
                 </main>
+                <footer>
+                    <div id="footer-inner">
+                        Copyright © 2021 Ori Ravid. All rights reserved.
+                    </div>
+                </footer>
             </div>
         </HashRouter>,
         document.getElementById("root")

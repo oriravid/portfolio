@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <header>
+        <div id="header-inner">
             <div id="header-left">
                 <img
                     id="avatar"
@@ -26,7 +26,7 @@ const Header = () => {
                     </NavLink>
                 </ul>
             </div>
-        </header>
+        </div>
     );
 };
 
