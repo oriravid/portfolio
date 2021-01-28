@@ -1,13 +1,27 @@
 //ext
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 //int
-import * as HELPERS from "./helpers";
+import * as HELPERS from "../utils/helpers";
 
 const Home = () => {
     const [selectedType, setType] = useState(null);
 
+    //detail view
+    let detailView;
+    const openDetailView = (post) => {
+        detailView.classList.add("active");
+    };
+
+    const closeDetailView = () => {
+        detailView.classList.remove("active");
+    };
+
     return (
         <div id="post-feed">
+            <div id="post-detail-container" ref={(ref) => (detailView = ref)}>
+                <span onClick={() => closeDetailView()}>CLOSE</span>
+                POST DETAIL
+            </div>
             <div id="post-feed-filter">
                 <span>Filter By:</span>
                 <ul
@@ -38,6 +52,7 @@ const Home = () => {
                             key={post.title}
                             className={`post-feed-list-item ${post.type.toLowerCase()} pointer`}
                             style={{ backgroundImage: `url(${post.image})` }}
+                            onClick={() => openDetailView(post)}
                         >
                             <div className="post-overlay">
                                 <div className="post-overlay-top">

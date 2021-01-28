@@ -79,10 +79,10 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 /***/ }),
 
-/***/ "./src/js/about.js":
-/*!*************************!*\
-  !*** ./src/js/about.js ***!
-  \*************************/
+/***/ "./src/js/components/about.js":
+/*!************************************!*\
+  !*** ./src/js/components/about.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -101,10 +101,10 @@ var About = function About() {
 
 /***/ }),
 
-/***/ "./src/js/header.js":
-/*!**************************!*\
-  !*** ./src/js/header.js ***!
-  \**************************/
+/***/ "./src/js/components/header.js":
+/*!*************************************!*\
+  !*** ./src/js/components/header.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -145,53 +145,10 @@ var Header = function Header() {
 
 /***/ }),
 
-/***/ "./src/js/helpers.js":
-/*!***************************!*\
-  !*** ./src/js/helpers.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "dateFormatter": () => /* binding */ dateFormatter
-/* harmony export */ });
-////////////// FORMATTING //////////////
-//input yyyy-mm-dd
-//prettier-ignore
-var dateFormatter = function dateFormatter(date, _short) {
-  var months = {
-    "01": "January",
-    "02": "February",
-    "03": "March",
-    "04": "April",
-    "05": "May",
-    "06": "June",
-    "07": "July",
-    "08": "August",
-    "09": "September",
-    "10": "October",
-    "11": "November",
-    "12": "December"
-  };
-  var parts = date.split("-");
-  var month = parts[1],
-      day = parts[2],
-      year = parts[0];
-
-  if (day[0] == 0) {
-    day = day[1];
-  }
-
-  return "".concat(_short ? months[month].slice(0, 3) : months[month], " ").concat(day, ", ").concat(year);
-};
-
-/***/ }),
-
-/***/ "./src/js/home.js":
-/*!************************!*\
-  !*** ./src/js/home.js ***!
-  \************************/
+/***/ "./src/js/components/home.js":
+/*!***********************************!*\
+  !*** ./src/js/components/home.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -200,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers */ "./src/js/helpers.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/helpers */ "./src/js/utils/helpers.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -222,11 +179,31 @@ var Home = function Home() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       selectedType = _useState2[0],
-      setType = _useState2[1];
+      setType = _useState2[1]; //detail view
+
+
+  var detailView;
+
+  var openDetailView = function openDetailView(post) {
+    detailView.classList.add("active");
+  };
+
+  var closeDetailView = function closeDetailView() {
+    detailView.classList.remove("active");
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "post-feed"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "post-detail-container",
+    ref: function ref(_ref) {
+      return detailView = _ref;
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    onClick: function onClick() {
+      return closeDetailView();
+    }
+  }, "CLOSE"), "POST DETAIL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "post-feed-filter"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Filter By:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
     id: "post-feed-type-list",
@@ -248,6 +225,9 @@ var Home = function Home() {
       className: "post-feed-list-item ".concat(post.type.toLowerCase(), " pointer"),
       style: {
         backgroundImage: "url(".concat(post.image, ")")
+      },
+      onClick: function onClick() {
+        return openDetailView(post);
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "post-overlay"
@@ -259,7 +239,7 @@ var Home = function Home() {
       className: "post-overlay-bottom"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
       className: "post-date"
-    }, _helpers__WEBPACK_IMPORTED_MODULE_1__.dateFormatter(post.date, "short")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    }, _utils_helpers__WEBPACK_IMPORTED_MODULE_1__.dateFormatter(post.date, "short")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
       className: "post-type"
     }, post.type))));
   })));
@@ -307,9 +287,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
-/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home */ "./src/js/home.js");
-/* harmony import */ var _about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./about */ "./src/js/about.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/header */ "./src/js/components/header.js");
+/* harmony import */ var _components_home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/home */ "./src/js/components/home.js");
+/* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/about */ "./src/js/components/about.js");
 //ext
 
 
@@ -321,16 +301,59 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener("DOMContentLoaded", function () {
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "app"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     exact: true,
     path: "/",
-    component: _home__WEBPACK_IMPORTED_MODULE_3__.default
+    component: _components_home__WEBPACK_IMPORTED_MODULE_3__.default
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     exact: true,
     path: "/about",
-    component: _about__WEBPACK_IMPORTED_MODULE_4__.default
+    component: _components_about__WEBPACK_IMPORTED_MODULE_4__.default
   }))))), document.getElementById("root"));
 });
+
+/***/ }),
+
+/***/ "./src/js/utils/helpers.js":
+/*!*********************************!*\
+  !*** ./src/js/utils/helpers.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dateFormatter": () => /* binding */ dateFormatter
+/* harmony export */ });
+////////////// FORMATTING //////////////
+//input yyyy-mm-dd
+//prettier-ignore
+var dateFormatter = function dateFormatter(date, _short) {
+  var months = {
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+  };
+  var parts = date.split("-");
+  var month = parts[1],
+      day = parts[2],
+      year = parts[0];
+
+  if (day[0] == 0) {
+    day = day[1];
+  }
+
+  return "".concat(_short ? months[month].slice(0, 3) : months[month], " ").concat(day, ", ").concat(year);
+};
 
 /***/ }),
 

@@ -3,9 +3,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route, Switch } from "react-router-dom";
 //int - components
-import Header from "./header";
-import Home from "./home";
-import About from "./about";
+import Header from "./components/header";
+import Home from "./components/home";
+import About from "./components/about";
 
 document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(
