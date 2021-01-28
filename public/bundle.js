@@ -145,6 +145,49 @@ var Header = function Header() {
 
 /***/ }),
 
+/***/ "./src/js/helpers.js":
+/*!***************************!*\
+  !*** ./src/js/helpers.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dateFormatter": () => /* binding */ dateFormatter
+/* harmony export */ });
+////////////// FORMATTING //////////////
+//input yyyy-mm-dd
+//prettier-ignore
+var dateFormatter = function dateFormatter(date, _short) {
+  var months = {
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+  };
+  var parts = date.split("-");
+  var month = parts[1],
+      day = parts[2],
+      year = parts[0];
+
+  if (day[0] == 0) {
+    day = day[1];
+  }
+
+  return "".concat(_short ? months[month].slice(0, 3) : months[month], " ").concat(day, ", ").concat(year);
+};
+
+/***/ }),
+
 /***/ "./src/js/home.js":
 /*!************************!*\
   !*** ./src/js/home.js ***!
@@ -157,6 +200,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers */ "./src/js/helpers.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -170,6 +214,8 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 //ext
+ //int
+
 
 
 var Home = function Home() {
@@ -192,17 +238,30 @@ var Home = function Home() {
       className: type === selectedType ? "active" : "",
       key: type
     }, type);
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "post-feed-list"
   }, posts.filter(function (post) {
     return selectedType ? post.type === selectedType : true;
   }).map(function (post) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: post.title,
-      className: "post-feed-list-item ".concat(post.type.toLowerCase())
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: post.image
-    }), post.title);
+      className: "post-feed-list-item ".concat(post.type.toLowerCase(), " pointer"),
+      style: {
+        backgroundImage: "url(".concat(post.image, ")")
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "post-overlay"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "post-overlay-top"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+      className: "post-title"
+    }, post.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "post-overlay-bottom"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+      className: "post-date"
+    }, _helpers__WEBPACK_IMPORTED_MODULE_1__.dateFormatter(post.date, "short")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+      className: "post-type"
+    }, post.type))));
   })));
 };
 
@@ -211,26 +270,26 @@ var types = ["All", "Music", "Code"];
 var posts = [{
   title: "Appo Music",
   body: "bunch of random text",
-  date: "01/01/2021",
-  image: "https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg",
+  date: "2021-01-01",
+  image: "../src/imgs/appo_music.png",
   type: "Code"
 }, {
-  title: "Fletcher | Silent Night",
+  title: "Fletcher – Silent Night",
   body: "bunch of random text",
-  date: "12/05/2020",
-  image: "https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg",
+  date: "2020-12-01",
+  image: "../src/imgs/fletcher_silent.jpg",
   type: "Music"
 }, {
   title: "LYRASSIST",
   body: "bunch of random text",
-  date: "12/15/2020",
-  image: "https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg",
+  date: "2020-11-30",
+  image: "../src/imgs/lyrassist.png",
   type: "Code"
 }, {
   title: "devHub",
   body: "bunch of random text",
-  date: "12/10/2020",
-  image: "https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg",
+  date: "2020-11-25",
+  image: "../src/imgs/devhub.png",
   type: "Code"
 }];
 

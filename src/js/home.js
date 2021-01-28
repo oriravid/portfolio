@@ -1,5 +1,7 @@
 //ext
 import React, { useState } from "react";
+//int
+import * as HELPERS from "./helpers";
 
 const Home = () => {
     const [selectedType, setType] = useState(null);
@@ -26,21 +28,38 @@ const Home = () => {
                     ))}
                 </ul>
             </div>
-            <ul id="post-feed-list">
+            <div id="post-feed-list">
                 {posts
                     .filter((post) =>
                         selectedType ? post.type === selectedType : true
                     )
                     .map((post) => (
-                        <li
+                        <div
                             key={post.title}
-                            className={`post-feed-list-item ${post.type.toLowerCase()}`}
+                            className={`post-feed-list-item ${post.type.toLowerCase()} pointer`}
+                            style={{ backgroundImage: `url(${post.image})` }}
                         >
-                            <img src={post.image} />
-                            {post.title}
-                        </li>
+                            <div className="post-overlay">
+                                <div className="post-overlay-top">
+                                    <span className="post-title">
+                                        {post.title}
+                                    </span>
+                                </div>
+                                <div className="post-overlay-bottom">
+                                    <span className="post-date">
+                                        {HELPERS.dateFormatter(
+                                            post.date,
+                                            "short"
+                                        )}
+                                    </span>
+                                    <span className="post-type">
+                                        {post.type}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     ))}
-            </ul>
+            </div>
         </div>
     );
 };
@@ -53,33 +72,29 @@ const posts = [
     {
         title: "Appo Music",
         body: "bunch of random text",
-        date: "01/01/2021",
-        image:
-            "https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg",
+        date: "2021-01-01",
+        image: "../src/imgs/appo_music.png",
         type: "Code",
     },
     {
-        title: "Fletcher | Silent Night",
+        title: "Fletcher – Silent Night",
         body: "bunch of random text",
-        date: "12/05/2020",
-        image:
-            "https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg",
+        date: "2020-12-01",
+        image: "../src/imgs/fletcher_silent.jpg",
         type: "Music",
     },
     {
         title: "LYRASSIST",
         body: "bunch of random text",
-        date: "12/15/2020",
-        image:
-            "https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg",
+        date: "2020-11-30",
+        image: "../src/imgs/lyrassist.png",
         type: "Code",
     },
     {
         title: "devHub",
         body: "bunch of random text",
-        date: "12/10/2020",
-        image:
-            "https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg",
+        date: "2020-11-25",
+        image: "../src/imgs/devhub.png",
         type: "Code",
     },
 ];

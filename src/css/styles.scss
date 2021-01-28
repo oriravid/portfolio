@@ -1,5 +1,6 @@
 // VARIABLES
 ////////////////////////////////////////////////////////////////////////////////
+$main-color: rgba(142, 179, 177, 1);
 $border-color-1: rgba(224, 224, 224, 0.75);
 $border-color-2: #e0e0e0;
 $box-shadow-1: 5px 5px 20px rgba(0, 0, 0, 0.1);
@@ -76,13 +77,13 @@ h3 {
 ////////////////////////////////////////////////////////////////////////////////
 
 header {
-    position: sticky;
-    top: 0;
+    // position: sticky;
+    // top: 0;
     padding: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(142, 179, 177, 1);
+    background-color: $main-color;
 }
 
 #header-left {
@@ -140,22 +141,86 @@ header {
 }
 
 #post-feed-list {
+    padding: 12.5px;
     display: flex;
-    flex-flow: row wrap;
-    padding: 0 12.5px;
+    flex-wrap: wrap;
 }
 
 .post-feed-list-item {
-    flex: 1 1 20%;
-    margin: 12.5px;
+    position: relative;
+    background: no-repeat center/cover;
+    margin: 25px 12.5px;
+    border-radius: 7.5px;
+    box-shadow: $box-shadow-2;
+    max-width: 50%;
+    overflow: hidden;
+}
+
+.post-feed-list-item:after {
+    content: "";
+    display: block;
+}
+
+.post-feed-list-item.code {
+    flex: 1 0 calc(33.3333% - 25px);
+}
+
+.post-feed-list-item.code:after {
+    padding-bottom: 52.65%;
 }
 
 .post-feed-list-item.music {
-    flex-grow: 0;
-    filter: grayscale(0.5);
+    flex: 1 1 calc(25% - 25px);
 }
 
-#post-feed-list li img {
-    height: 100%;
-    width: 100%;
+.post-feed-list-item.music:after {
+    padding-bottom: 100%;
+}
+
+.post-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.8)
+    );
+
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.post-feed-list-item:hover .post-overlay {
+    opacity: 1;
+}
+
+.post-overlay-bottom,
+.post-overlay-top {
+    text-transform: uppercase;
+}
+
+.post-overlay-top {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.post-overlay-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+}
+
+.post-date,
+.post-type {
+    background-color: $main-color;
+    padding: 7.5px;
+    border-radius: 7.5px;
+    color: white;
+    box-shadow: $box-shadow-2;
 }
