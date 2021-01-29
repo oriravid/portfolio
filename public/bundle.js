@@ -116,7 +116,9 @@ var Intro = function Intro(_ref) {
     href: "#about"
   }, "About")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "\u2022"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "#contact"
-  }, "Contact")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "DOWN"));
+  }, "Contact")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "#projects"
+  }, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.arrowDown("intro-arrow pointer".concat(scrollPos > 0 ? " inactive" : ""))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Intro);
@@ -452,6 +454,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "add": () => /* binding */ add,
 /* harmony export */   "addCircle": () => /* binding */ addCircle,
 /* harmony export */   "arrow": () => /* binding */ arrow,
+/* harmony export */   "arrowDown": () => /* binding */ arrowDown,
 /* harmony export */   "arrowLeft": () => /* binding */ arrowLeft,
 /* harmony export */   "arrowRight": () => /* binding */ arrowRight,
 /* harmony export */   "browse": () => /* binding */ browse,
@@ -530,6 +533,21 @@ var arrow = function arrow(classes) {
     fill: "none"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
     d: "M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z"
+  }));
+};
+var arrowDown = function arrowDown(classes, action) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24",
+    viewBox: "0 0 24 24",
+    width: "24",
+    className: classes,
+    onClick: action
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
   }));
 };
 var arrowLeft = function arrowLeft(classes, action) {

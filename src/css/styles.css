@@ -146,6 +146,25 @@ h3 {
   display: flex;
   justify-content: space-between; }
 
+#intro .intro-arrow {
+  position: absolute;
+  bottom: 25px;
+  left: calc(50% - 50px);
+  z-index: 500;
+  height: 125px;
+  width: 125px;
+  fill: #f3f6f5;
+  transition: all 0.4s;
+  opacity: 1;
+  animation: fade-up 0.5s ease-out 2.5s backwards; }
+
+#intro .intro-arrow:hover {
+  fill: #33393b; }
+
+#intro .intro-arrow.inactive {
+  opacity: 0;
+  pointer-events: none; }
+
 #intro-background {
   position: absolute;
   width: 100%;
@@ -156,9 +175,6 @@ h3 {
 
 #intro-background .slice {
   flex: 1 1 20%; }
-
-#intro-background .slice.animated {
-  animation: slice-in 0.4s linear 1 both; }
 
 #intro-background .slice:nth-of-type(1) {
   background-color: #33393b; }
@@ -174,6 +190,9 @@ h3 {
 
 #intro-background .slice:nth-of-type(5) {
   background-color: #71c7ec; }
+
+#intro-background .slice.animated {
+  animation: slice-in 0.4s linear 1 both; }
 
 #projects {
   position: relative;

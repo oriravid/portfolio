@@ -60,7 +60,11 @@ const Intro = ({ root }) => {
                     </li>
                 </ul>
             </div>
-            <span>DOWN</span>
+            <a href="#projects">
+                {ICONS.arrowDown(
+                    `intro-arrow pointer${scrollPos > 0 ? " inactive" : ""}`
+                )}
+            </a>
         </div>
     );
 };
