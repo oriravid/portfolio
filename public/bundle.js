@@ -2,9 +2,9 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/components/about.js":
+/***/ "./src/js/components/intro.js":
 /*!************************************!*\
-  !*** ./src/js/components/about.js ***!
+  !*** ./src/js/components/intro.js ***!
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -33,7 +33,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var About = function About() {
+var Intro = function Intro() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
       scrollPos = _useState2[0],
@@ -46,36 +46,44 @@ var About = function About() {
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section",
-    id: "about",
+    id: "intro",
     ref: section
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "about-background"
+    id: "intro-background"
   }, [1, 2, 3, 4, 5].map(function (num) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: num,
-      className: "slice",
+      className: "slice animated",
       style: {
-        animationDelay: "".concat(num * 0.2, "s")
+        animationDelay: "".concat(num * 0.2, "s"),
+        transform: "translateY(".concat(20 * num * scrollPos, "%)")
+      },
+      onAnimationEnd: function onAnimationEnd(e) {
+        return e.currentTarget.classList.remove("animated");
       }
     });
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section-inner animated",
     style: {
-      transform: "translateY(-".concat(scrollPos * 100, "%) perspective(2000px) rotateX(").concat(120 * scrollPos, "deg) scale(").concat(1 - scrollPos, ")"),
-      opacity: "".concat(1 - scrollPos)
+      transform: "translateY(".concat(scrollPos * 125, "%)\n                    translateZ(-").concat(100 * scrollPos, "px)\n                    perspective(1000px)\n                    rotateX(").concat(90 * scrollPos, "deg)") // opacity: `${1.75 - scrollPos}`,
+
     },
     onAnimationEnd: function onAnimationEnd(e) {
       return e.currentTarget.classList.remove("animated");
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    id: "about-image",
+    id: "intro-image",
     src: "https://avatars.githubusercontent.com/u/71371489?s=460&u=0d99ba3b21759743f7b3e50716473e59027a4141&v=4"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Ori Ravid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    id: "about-content"
-  }, "A software engineer with an extensive audio engineering background.")));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Ori Ravid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Software & Audio Engineer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "#projects"
+  }, "Projects")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "\u2022"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "#about"
+  }, "About")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "\u2022"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "#contact"
+  }, "Contact")))));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Intro);
 
 /***/ }),
 
@@ -139,7 +147,7 @@ var Projects = function Projects() {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section",
-    id: "project-feed"
+    id: "projects"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section-inner"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -147,23 +155,23 @@ var Projects = function Projects() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
     className: "section-title"
   }, "Projects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
-    id: "project-feed-type-list"
+    id: "project-type-list"
   }, types.map(function (type) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-      className: "project-feed-type-list-item pointer\n                                    ".concat(selectedType === type ? " active" : ""),
+      className: "project-type-list-item pointer\n                                    ".concat(selectedType === type ? " active" : ""),
       key: type,
       onClick: function onClick(e) {
         return setType(e.currentTarget.innerText);
       }
     }, type);
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "project-feed-list"
+    id: "project-list"
   }, projects.filter(function (project) {
     return selectedType === "ALL" ? true : project.type === selectedType;
   }).map(function (project, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: Math.random(),
-      className: "project-feed-list-item ".concat(project.type.toLowerCase(), " pointer"),
+      className: "project-list-item ".concat(project.type.toLowerCase(), " pointer"),
       style: {
         backgroundImage: "url(".concat(project.image, ")"),
         animationDelay: "".concat(idx * 0.25, "s")
@@ -260,7 +268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _components_projects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/projects */ "./src/js/components/projects.js");
-/* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/about */ "./src/js/components/about.js");
+/* harmony import */ var _components_intro__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/intro */ "./src/js/components/intro.js");
 //ext
 
  //int - components
@@ -268,7 +276,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_about__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_projects__WEBPACK_IMPORTED_MODULE_2__.default, null)), document.getElementById("root"));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_intro__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_projects__WEBPACK_IMPORTED_MODULE_2__.default, null)), document.getElementById("root"));
 });
 
 /***/ }),

@@ -1,6 +1,6 @@
 html,
 input {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #29363b; }
 
 body {
@@ -35,7 +35,8 @@ h3 {
 #root {
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory; }
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; }
 
 .section {
   min-height: 100vh;
@@ -52,90 +53,108 @@ h3 {
   justify-content: space-between; }
 
 .section-title {
-  font-family: "Oswald", sans-serif;
   font-size: 36px; }
 
-#about {
+#intro {
   background-color: #f3f6f5;
   display: flex;
   align-items: center; }
 
-#about .section-inner {
+#intro .section-inner {
   background-color: #f3f6f5;
   position: relative;
+  max-width: 500px;
   padding: 50px;
-  border-radius: 25px;
-  box-shadow: 5px 5px 20px rgba(46, 16, 16, 0.5);
+  border-radius: 12.5px;
+  box-shadow: 0px 10px 35px rgba(46, 16, 16, 0.25);
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  opacity: 0; }
+  opacity: 1; }
 
-#about .section-inner.animated {
+#intro .section-inner.animated {
   animation: fade-in 1.5s ease-out 1.5s both; }
 
-#about-background {
+#intro .section-inner #intro-image {
+  width: 125px;
+  border-radius: 50%;
+  margin-bottom: 25px; }
+
+#intro .section-inner h1 {
+  font-size: 42px;
+  font-weight: 600; }
+
+#intro .section-inner p {
+  text-align: center;
+  font-size: 20px; }
+
+#intro .section-inner ul {
+  margin-top: 25px;
+  width: 100%;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between; }
+
+#intro-background {
   position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
   pointer-events: none; }
 
-#about-background .slice {
-  flex: 1 1 20%;
-  transform: translateY(-100%);
+#intro-background .slice {
+  flex: 1 1 20%; }
+
+#intro-background .slice.animated {
   animation: slice-in 0.4s linear 1 both; }
 
-#about-background .slice:nth-of-type(1) {
+#intro-background .slice:nth-of-type(1) {
   background-color: #29363b; }
 
-#about-background .slice:nth-of-type(2) {
+#intro-background .slice:nth-of-type(2) {
   background-color: #ea495f; }
 
-#about-background .slice:nth-of-type(3) {
+#intro-background .slice:nth-of-type(3) {
   background-color: #f4837d; }
 
-#about-background .slice:nth-of-type(4) {
+#intro-background .slice:nth-of-type(4) {
   background-color: #fdcea9; }
 
-#about-background .slice:nth-of-type(5) {
+#intro-background .slice:nth-of-type(5) {
   background-color: #99b998; }
 
-#about-image {
-  width: 175px;
-  border-radius: 50%; }
-
-#project-feed {
+#projects {
   position: relative;
-  background-color: #f3f6f5; }
+  background-color: #f3f6f5;
+  box-shadow: 0px 0px 25px rgba(46, 16, 16, 0.6); }
 
-#project-feed .section-inner {
+#projects .section-inner {
   height: 100%; }
 
-#project-feed-type-list {
+#project-type-list {
   display: flex;
   border-bottom: 3px solid #31244e; }
 
-.project-feed-type-list-item {
+.project-type-list-item {
   text-transform: uppercase;
   padding: 5px 15px;
   transition: all 0.2s;
   font-weight: 700;
   border-radius: 7.5px 7.5px 0 0; }
 
-.project-feed-type-list-item.active {
+.project-type-list-item.active {
   background-color: #31244e;
   color: white;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); }
 
-#project-feed-list {
+#project-list {
   margin: 0 -25px;
   padding: 12.5px;
   display: flex;
   flex-wrap: wrap; }
 
-.project-feed-list-item {
+.project-list-item {
   position: relative;
   background: no-repeat center/cover;
   margin: 25px 12.5px;
@@ -147,29 +166,29 @@ h3 {
   opacity: 0;
   animation: fade-in 0.3s ease-out forwards; }
 
-.project-feed-list-item:after {
+.project-list-item:after {
   content: "";
   display: block; }
 
-.project-feed-list-item.code {
+.project-list-item.code {
   flex: 1 1 calc(50% - 25px); }
 
-.project-feed-list-item.code:after {
+.project-list-item.code:after {
   padding-bottom: 52.65%; }
 
-.project-feed-list-item.music {
+.project-list-item.music {
   flex: 0 0 calc(33.33333% - 25px); }
 
-.project-feed-list-item.music:after {
+.project-list-item.music:after {
   padding-bottom: 100%; }
 
-.project-feed-list-item:hover {
+.project-list-item:hover {
   transform: perspective(2000px) rotateX(10deg); }
 
-.project-feed-list-item:hover .project-overlay {
+.project-list-item:hover .project-overlay {
   opacity: 1; }
 
-.project-feed-list-item:hover .project-overlay-inner {
+.project-list-item:hover .project-overlay-inner {
   transform: translateY(0); }
 
 .project-overlay {

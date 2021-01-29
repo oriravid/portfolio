@@ -3,12 +3,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 //int - components
 import Projects from "./components/projects";
-import About from "./components/about";
+import Intro from "./components/intro";
 
 document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(
         <React.Fragment>
-            <About />
+            <Intro />
             <Projects />
         </React.Fragment>,
         document.getElementById("root")

@@ -21,14 +21,14 @@ const Projects = () => {
     };
 
     return (
-        <div className="section" id="project-feed">
+        <div className="section" id="projects">
             <div className="section-inner">
                 <div className="section-header">
                     <h2 className="section-title">Projects</h2>
-                    <ul id="project-feed-type-list">
+                    <ul id="project-type-list">
                         {types.map((type) => (
                             <li
-                                className={`project-feed-type-list-item pointer
+                                className={`project-type-list-item pointer
                                     ${selectedType === type ? " active" : ""}`}
                                 key={type}
                                 onClick={(e) =>
@@ -41,7 +41,7 @@ const Projects = () => {
                     </ul>
                 </div>
 
-                <div id="project-feed-list">
+                <div id="project-list">
                     {projects
                         .filter((project) =>
                             selectedType === "ALL"
@@ -51,7 +51,7 @@ const Projects = () => {
                         .map((project, idx) => (
                             <div
                                 key={Math.random()}
-                                className={`project-feed-list-item ${project.type.toLowerCase()} pointer`}
+                                className={`project-list-item ${project.type.toLowerCase()} pointer`}
                                 style={{
                                     backgroundImage: `url(${project.image})`,
                                     animationDelay: `${idx * 0.25}s`,
