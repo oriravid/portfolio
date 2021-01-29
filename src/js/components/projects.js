@@ -5,7 +5,7 @@ import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
 const Projects = () => {
-    const [selectedType, setType] = useState("All");
+    const [selectedType, setType] = useState("ALL");
     const [selectedProject, setProject] = useState(projects[0]);
 
     //detail view
@@ -22,82 +22,88 @@ const Projects = () => {
 
     return (
         <div className="section" id="project-feed">
-            <div className="section-header">
-                <h2 className="section-title">PROJECTS</h2>
-                <div id="project-feed-filter">
+            <div className="section-inner">
+                <div className="section-header">
+                    <h2 className="section-title">Projects</h2>
                     <ul id="project-feed-type-list">
                         {types.map((type) => (
                             <li
                                 className={`project-feed-type-list-item pointer
                                     ${selectedType === type ? " active" : ""}`}
                                 key={type}
-                                onClick={(e) => {
-                                    setType(e.currentTarget.innerText);
-                                }}
+                                onClick={(e) =>
+                                    setType(e.currentTarget.innerText)
+                                }
                             >
                                 {type}
                             </li>
                         ))}
                     </ul>
                 </div>
-            </div>
 
-            <div id="project-feed-list">
-                {projects
-                    .filter((project) =>
-                        selectedType !== "All"
-                            ? project.type === selectedType
-                            : true
-                    )
-                    .map((project) => (
-                        <div
-                            key={project.title}
-                            className={`project-feed-list-item ${project.type.toLowerCase()} pointer`}
-                            style={{ backgroundImage: `url(${project.image})` }}
-                            onClick={() => openDetailView(project)}
-                        >
-                            <div className="project-overlay">
-                                <div className="project-overlay-top">
-                                    <h3 className="project-title">
-                                        {project.title}
-                                    </h3>
-                                </div>
-                                <div className="project-overlay-bottom">
-                                    <span className="project-date">
-                                        {HELPERS.dateFormatter(
-                                            project.date,
-                                            "short"
-                                        )}
-                                    </span>
-                                    <span className="project-type">
-                                        {project.type}
-                                    </span>
+                <div id="project-feed-list">
+                    {projects
+                        .filter((project) =>
+                            selectedType === "ALL"
+                                ? true
+                                : project.type === selectedType
+                        )
+                        .map((project, idx) => (
+                            <div
+                                key={Math.random()}
+                                className={`project-feed-list-item ${project.type.toLowerCase()} pointer`}
+                                style={{
+                                    backgroundImage: `url(${project.image})`,
+                                    animationDelay: `${idx * 0.25}s`,
+                                }}
+                                onClick={() => openDetailView(project)}
+                            >
+                                <div className="project-overlay">
+                                    <div className="project-overlay-inner">
+                                        <h3 className="project-title">
+                                            {project.title}
+                                        </h3>
+                                    </div>
+                                    <div className="project-overlay-inner">
+                                        <span className="project-date">
+                                            {HELPERS.dateFormatter(
+                                                project.date,
+                                                "short"
+                                            )}
+                                        </span>
+                                        <span className="project-type">
+                                            {project.type}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-            </div>
-
-            <div
-                id="project-detail-container"
-                ref={(ref) => (detailView = ref)}
-            >
-                {ICONS.close("detail-close", () => closeDetailView())}
-                <div id="project-detail-info">
-                    <h3>{selectedProject.title}</h3>
-                    <span>{HELPERS.dateFormatter(selectedProject.date)}</span>
-                    <p>{selectedProject.description}</p>
-                    {Object.keys(selectedProject.links).map((linkText) => (
-                        <a
-                            href={selectedProject.links[linkText]}
-                            target="_blank"
-                        >
-                            <div className="button primary">{linkText}</div>
-                        </a>
-                    ))}
+                        ))}
                 </div>
-                <div id="project-detail-image">
-                    <img src={selectedProject?.image} />
+
+                <div
+                    id="project-detail-container"
+                    ref={(ref) => (detailView = ref)}
+                >
+                    {ICONS.close("detail-close", () => closeDetailView())}
+                    <div id="project-detail-info">
+                        <h3>{selectedProject.title}</h3>
+                        <span>
+                            {HELPERS.dateFormatter(selectedProject.date)}
+                        </span>
+                        <p>{selectedProject.description}</p>
+                        {Object.keys(selectedProject.links).map((linkText) => (
+                            <a
+                                key={linkText}
+                                href={selectedProject.links[linkText]}
+                                target="_blank"
+                            >
+                                <div className="button primary">{linkText}</div>
+                            </a>
+                        ))}
+                    </div>
+                    <div id="project-detail-image">
+                        <img src={selectedProject?.image} />
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +112,7 @@ const Projects = () => {
 
 export default Projects;
 
-const types = ["All", "Music", "Code"];
+const types = ["ALL", "MUSIC", "CODE"];
 
 const projects = [
     {
@@ -116,7 +122,7 @@ const projects = [
         date: "2021-01-01",
         image: "../src/imgs/appo_music.png",
         links: { view: "https://appo-music.herokuapp.com/" },
-        type: "Code",
+        type: "CODE",
     },
     {
         title: "Fletcher – Silent Night",
@@ -127,7 +133,7 @@ const projects = [
             listen:
                 "https://music.apple.com/us/album/silent-night-single/1541041366",
         },
-        type: "Music",
+        type: "MUSIC",
     },
     {
         title: "LYRASSIST",
@@ -136,7 +142,7 @@ const projects = [
         date: "2020-11-30",
         image: "../src/imgs/lyrassist.png",
         links: { view: "https://oriravid.github.io/LYRASSIST/" },
-        type: "Code",
+        type: "CODE",
     },
     {
         title: "devHub",
@@ -145,6 +151,6 @@ const projects = [
         date: "2020-11-25",
         image: "../src/imgs/devhub.png",
         links: { view: "https://getdevhub.herokuapp.com/#/" },
-        type: "Code",
+        type: "CODE",
     },
 ];
