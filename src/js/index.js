@@ -8,10 +8,8 @@ import About from "./components/about";
 document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(
         <React.Fragment>
-            <main>
-                <About />
-                <Projects />
-            </main>
+            <About />
+            <Projects />
         </React.Fragment>,
         document.getElementById("root")
     );

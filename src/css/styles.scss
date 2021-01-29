@@ -1,6 +1,7 @@
 // VARIABLES
 ////////////////////////////////////////////////////////////////////////////////
 $main-color: rgb(49, 36, 78);
+$off-white: rgba(243, 246, 245, 1);
 $border-color-1: rgba(224, 224, 224, 0.75);
 $border-color-2: #e0e0e0;
 $box-shadow-1: 5px 5px 20px rgba(0, 0, 0, 0.1);
@@ -62,10 +63,18 @@ h3 {
     cursor: pointer;
 }
 
+#root {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
 // SECTION
 ////////////////////////////////////////////////////////////////////////////////
 
 .section {
+    min-height: 100vh;
+    scroll-snap-align: start;
 }
 
 .section-inner {
@@ -89,20 +98,25 @@ h3 {
 ////////////////////////////////////////////////////////////////////////////////
 
 #about {
-    height: 100vh;
-    background-color: rgba(243, 246, 245, 1);
+    background-color: $off-white;
     display: flex;
     align-items: center;
 
     .section-inner {
-        background-color: rgba(243, 246, 245, 1);
+        background-color: $off-white;
         position: relative;
         padding: 50px;
         border-radius: 25px;
+        box-shadow: $box-shadow-4;
         display: flex;
         flex-flow: column;
         align-items: center;
         justify-content: center;
+        opacity: 0;
+
+        &.animated {
+            animation: fade-in 1.5s ease-out 1.5s both;
+        }
     }
 }
 
@@ -111,11 +125,12 @@ h3 {
     width: 100%;
     height: 100%;
     display: flex;
+    pointer-events: none;
 
     .slice {
         flex: 1 1 20%;
         transform: translateY(-100%);
-        animation: slice-in 0.4s linear 1 forwards;
+        animation: slice-in 0.4s linear 1 both;
     }
 
     .slice:nth-of-type(1) {
@@ -135,17 +150,6 @@ h3 {
     }
 }
 
-@keyframes slice-in {
-    from {
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%);
-    }
-    to {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-}
-
 #about-image {
     width: 175px;
     border-radius: 50%;
@@ -156,6 +160,11 @@ h3 {
 
 #project-feed {
     position: relative;
+    background-color: $off-white;
+
+    .section-inner {
+        height: 100%;
+    }
 }
 
 #project-feed-type-list {
@@ -194,7 +203,7 @@ h3 {
     overflow: hidden;
     transition: all 0.2s;
     opacity: 0;
-    animation: project-in 0.3s ease-out forwards;
+    animation: fade-in 0.3s ease-out forwards;
 
     &:after {
         content: "";
@@ -216,17 +225,6 @@ h3 {
     }
 
     //EFFECTS
-
-    @keyframes project-in {
-        from {
-            opacity: 0;
-            transform: translateY(25px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 
     &:hover {
         transform: perspective(2000px) rotateX(10deg);
@@ -332,5 +330,29 @@ h3 {
         max-height: 100%;
         max-width: 100%;
         box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.3);
+    }
+}
+
+// ANIMATIONS
+
+@keyframes slice-in {
+    from {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

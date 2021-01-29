@@ -32,6 +32,15 @@ h3 {
 .pointer:hover {
   cursor: pointer; }
 
+#root {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; }
+
+.section {
+  min-height: 100vh;
+  scroll-snap-align: start; }
+
 .section-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -47,7 +56,6 @@ h3 {
   font-size: 36px; }
 
 #about {
-  height: 100vh;
   background-color: #f3f6f5;
   display: flex;
   align-items: center; }
@@ -57,21 +65,27 @@ h3 {
   position: relative;
   padding: 50px;
   border-radius: 25px;
+  box-shadow: 5px 5px 20px rgba(46, 16, 16, 0.5);
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  opacity: 0; }
+
+#about .section-inner.animated {
+  animation: fade-in 1.5s ease-out 1.5s both; }
 
 #about-background {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: flex; }
+  display: flex;
+  pointer-events: none; }
 
 #about-background .slice {
   flex: 1 1 20%;
   transform: translateY(-100%);
-  animation: slice-in 0.4s linear 1 forwards; }
+  animation: slice-in 0.4s linear 1 both; }
 
 #about-background .slice:nth-of-type(1) {
   background-color: #29363b; }
@@ -88,20 +102,16 @@ h3 {
 #about-background .slice:nth-of-type(5) {
   background-color: #99b998; }
 
-@keyframes slice-in {
-  from {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%); }
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); } }
-
 #about-image {
   width: 175px;
   border-radius: 50%; }
 
 #project-feed {
-  position: relative; }
+  position: relative;
+  background-color: #f3f6f5; }
+
+#project-feed .section-inner {
+  height: 100%; }
 
 #project-feed-type-list {
   display: flex;
@@ -135,7 +145,7 @@ h3 {
   overflow: hidden;
   transition: all 0.2s;
   opacity: 0;
-  animation: project-in 0.3s ease-out forwards; }
+  animation: fade-in 0.3s ease-out forwards; }
 
 .project-feed-list-item:after {
   content: "";
@@ -152,14 +162,6 @@ h3 {
 
 .project-feed-list-item.music:after {
   padding-bottom: 100%; }
-
-@keyframes project-in {
-  from {
-    opacity: 0;
-    transform: translateY(25px); }
-  to {
-    opacity: 1;
-    transform: translateY(0); } }
 
 .project-feed-list-item:hover {
   transform: perspective(2000px) rotateX(10deg); }
@@ -249,3 +251,19 @@ h3 {
   max-height: 100%;
   max-width: 100%;
   box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.3); }
+
+@keyframes slice-in {
+  from {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(25px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
