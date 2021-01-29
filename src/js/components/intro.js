@@ -4,12 +4,9 @@ import React, { useState, useRef } from "react";
 import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
-const Intro = () => {
+const Intro = ({ root }) => {
     const [scrollPos, setScrollPos] = useState(0);
-
-    const root = document.getElementById("root");
     const section = useRef(null);
-
     root.addEventListener("scroll", () => {
         setScrollPos(root.scrollTop / section.current.offsetHeight);
     });
@@ -38,7 +35,6 @@ const Intro = () => {
                     translateZ(-${100 * scrollPos}px)
                     perspective(1000px)
                     rotateX(${90 * scrollPos}deg)`,
-                    // opacity: `${1.75 - scrollPos}`,
                 }}
                 onAnimationEnd={(e) =>
                     e.currentTarget.classList.remove("animated")
@@ -64,6 +60,7 @@ const Intro = () => {
                     </li>
                 </ul>
             </div>
+            <span>DOWN</span>
         </div>
     );
 };

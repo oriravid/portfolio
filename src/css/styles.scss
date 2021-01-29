@@ -1,16 +1,20 @@
 // VARIABLES
 ////////////////////////////////////////////////////////////////////////////////
-$main-color: rgb(49, 36, 78);
-$off-white: rgba(243, 246, 245, 1);
-$border-color-1: rgba(224, 224, 224, 0.75);
-$border-color-2: #e0e0e0;
-$box-shadow-1: 5px 5px 20px rgba(0, 0, 0, 0.1);
-$box-shadow-2: 5px 5px 20px rgba(0, 0, 0, 0.15);
-$box-shadow-3: 5px 5px 20px rgba(0, 0, 0, 0.3);
-$box-shadow-4: 5px 5px 20px rgba(46, 16, 16, 0.5);
-$text-color: #29363b;
+$color-white: rgba(243, 246, 245, 1);
+$color-black: #33393b;
+$color-blue1: #005073;
+$color-blue2: #107dac;
+$color-blue3: #189ad3;
+$color-blue4: #71c7ec;
 $error: rgb(190, 40, 40);
 $link: #0070c9;
+
+$border-color-1: rgba(224, 224, 224, 0.75);
+$border-color-2: #e0e0e0;
+$box-shadow-1: 0px 0px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-2: 0px 0px 20px rgba(0, 0, 0, 0.15);
+$box-shadow-3: 0px 0px 20px rgba(0, 0, 0, 0.3);
+$box-shadow-4: 0px 0px 20px rgba(46, 16, 16, 0.5);
 $gray-text-1: rgba(60, 60, 67, 0.4);
 $gray-text-2: rgba(60, 60, 67, 0.6);
 
@@ -24,7 +28,7 @@ $gray-text-2: rgba(60, 60, 67, 0.6);
 html,
 input {
     font-family: "Poppins", sans-serif;
-    color: $text-color;
+    color: $color-black;
 }
 
 body {
@@ -94,20 +98,85 @@ h3 {
     font-size: 36px;
 }
 
+// NAV
+////////////////////////////////////////////////////////////////////////////////
+
+#nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+
+    &.active {
+        opacity: 1;
+
+        #nav-list {
+            pointer-events: auto;
+        }
+    }
+
+    #nav-list {
+        margin: 20px;
+        padding: 15px 40px;
+        background-color: $color-black;
+        display: flex;
+        border-radius: 7.5px;
+        box-shadow: $box-shadow-2;
+        transition: all 0.4s;
+
+        .nav-list-item {
+            margin: 0 20px;
+
+            a {
+                text-transform: uppercase;
+                font-size: 16px;
+                font-weight: 600;
+                color: $color-white;
+
+                &.active {
+                    font-weight: 800;
+                    border-bottom: 3px solid $color-blue4;
+                }
+            }
+        }
+    }
+
+    &.light {
+        #nav-list {
+            background-color: $color-white;
+
+            a {
+                color: $color-black;
+
+                &.active {
+                    border-bottom: 3px solid $color-blue1;
+                }
+            }
+        }
+    }
+}
+
 // INTRO
 ////////////////////////////////////////////////////////////////////////////////
 
 #intro {
-    background-color: $off-white;
+    background-color: $color-white;
     display: flex;
     align-items: center;
 
     .section-inner {
-        background-color: $off-white;
+        background-color: $color-white;
         position: relative;
         max-width: 500px;
         padding: 50px;
-        border-radius: 12.5px;
+        border-radius: 7.5px;
         box-shadow: 0px 10px 35px rgba(46, 16, 16, 0.25);
         display: flex;
         flex-flow: column;
@@ -116,7 +185,7 @@ h3 {
         opacity: 1;
 
         &.animated {
-            animation: fade-in 1.5s ease-out 1.5s both;
+            animation: fade-up 1s ease-out 1.5s both;
         }
 
         #intro-image {
@@ -151,6 +220,7 @@ h3 {
     height: 100%;
     display: flex;
     pointer-events: none;
+    overflow: hidden;
 
     .slice {
         flex: 1 1 20%;
@@ -161,19 +231,19 @@ h3 {
     }
 
     .slice:nth-of-type(1) {
-        background-color: #29363b;
+        background-color: $color-black;
     }
     .slice:nth-of-type(2) {
-        background-color: #ea495f;
+        background-color: $color-blue1;
     }
     .slice:nth-of-type(3) {
-        background-color: #f4837d;
+        background-color: $color-blue2;
     }
     .slice:nth-of-type(4) {
-        background-color: #fdcea9;
+        background-color: $color-blue3;
     }
     .slice:nth-of-type(5) {
-        background-color: #99b998;
+        background-color: $color-blue4;
     }
 }
 
@@ -182,7 +252,7 @@ h3 {
 
 #projects {
     position: relative;
-    background-color: $off-white;
+    background-color: $color-white;
     box-shadow: 0px 0px 25px rgba(46, 16, 16, 0.6);
 
     .section-inner {
@@ -192,7 +262,7 @@ h3 {
 
 #project-type-list {
     display: flex;
-    border-bottom: 3px solid $main-color;
+    border-bottom: 3px solid $color-blue1;
 }
 
 .project-type-list-item {
@@ -203,7 +273,7 @@ h3 {
     border-radius: 7.5px 7.5px 0 0;
 
     &.active {
-        background-color: $main-color;
+        background-color: $color-blue1;
         color: white;
         box-shadow: $box-shadow-3;
     }
@@ -226,7 +296,7 @@ h3 {
     overflow: hidden;
     transition: all 0.2s;
     opacity: 0;
-    animation: fade-in 0.3s ease-out forwards;
+    animation: fade-up 0.3s ease-out forwards;
 
     &:after {
         content: "";
@@ -311,34 +381,34 @@ h3 {
 }
 
 #project-detail-container {
-    display: none;
-
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    min-height: 800px;
-    width: calc(100% + 50px);
-    margin: -25px;
-    padding: 25px;
-    background-color: white;
+    width: 100%;
+    background-color: $color-black;
+    box-shadow: $box-shadow-4;
     z-index: 1;
-    transform: translateY(-100%);
-    transition: all 0.4s;
-    // display: flex;
-    align-items: center;
+    transform: translateX(-100%);
+    transition: all 1s;
 
     &.active {
-        transform: translateY(0%);
+        transform: translateX(0%);
     }
-}
 
-.detail-close {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    height: 50px;
-    width: 50px;
+    .section-inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .detail-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            height: 50px;
+            width: 50px;
+        }
+    }
 }
 
 #project-detail-info {
@@ -356,7 +426,17 @@ h3 {
     }
 }
 
+// ABOUT
+////////////////////////////////////////////////////////////////////////////////
+
+#about {
+    position: relative;
+    background-color: $color-black;
+    color: $color-white;
+}
+
 // ANIMATIONS
+////////////////////////////////////////////////////////////////////////////////
 
 @keyframes slice-in {
     from {
@@ -369,7 +449,7 @@ h3 {
     }
 }
 
-@keyframes fade-in {
+@keyframes fade-up {
     from {
         opacity: 0;
         transform: translateY(25px);

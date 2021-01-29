@@ -78,31 +78,39 @@ const Projects = () => {
                                 </div>
                             </div>
                         ))}
+
+                    {/* <div style={{ minHeight: "1000px" }}></div> */}
                 </div>
 
                 <div
                     id="project-detail-container"
                     ref={(ref) => (detailView = ref)}
                 >
-                    {ICONS.close("detail-close", () => closeDetailView())}
-                    <div id="project-detail-info">
-                        <h3>{selectedProject.title}</h3>
-                        <span>
-                            {HELPERS.dateFormatter(selectedProject.date)}
-                        </span>
-                        <p>{selectedProject.description}</p>
-                        {Object.keys(selectedProject.links).map((linkText) => (
-                            <a
-                                key={linkText}
-                                href={selectedProject.links[linkText]}
-                                target="_blank"
-                            >
-                                <div className="button primary">{linkText}</div>
-                            </a>
-                        ))}
-                    </div>
-                    <div id="project-detail-image">
-                        <img src={selectedProject?.image} />
+                    <div className="section-inner">
+                        {ICONS.close("detail-close", () => closeDetailView())}
+                        <div id="project-detail-info">
+                            <h3>{selectedProject.title}</h3>
+                            <span>
+                                {HELPERS.dateFormatter(selectedProject.date)}
+                            </span>
+                            <p>{selectedProject.description}</p>
+                            {Object.keys(selectedProject.links).map(
+                                (linkText) => (
+                                    <a
+                                        key={linkText}
+                                        href={selectedProject.links[linkText]}
+                                        target="_blank"
+                                    >
+                                        <div className="button primary">
+                                            {linkText}
+                                        </div>
+                                    </a>
+                                )
+                            )}
+                        </div>
+                        <div id="project-detail-image">
+                            <img src={selectedProject?.image} />
+                        </div>
                     </div>
                 </div>
             </div>
