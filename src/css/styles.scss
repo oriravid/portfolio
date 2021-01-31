@@ -77,8 +77,9 @@ h3 {
 ////////////////////////////////////////////////////////////////////////////////
 
 .section {
-    min-height: 100vh;
+    height: 100vh;
     scroll-snap-align: start;
+    padding: 25px;
 }
 
 .section-inner {
@@ -122,7 +123,7 @@ h3 {
     }
 
     #nav-list {
-        margin: 20px;
+        margin: 15px;
         padding: 15px;
         background-color: $color-black;
         display: flex;
@@ -169,6 +170,7 @@ h3 {
     background-color: $color-white;
     display: flex;
     align-items: center;
+    padding: 0;
 
     .section-inner {
         background-color: $color-white;
@@ -327,8 +329,7 @@ h3 {
 }
 
 #project-list {
-    margin: 0 -25px;
-    padding: 12.5px;
+    margin: 25px -12.5px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -336,8 +337,9 @@ h3 {
 .project-list-item {
     position: relative;
     background: no-repeat center/cover;
-    margin: 25px 12.5px;
-    height: 375px;
+    margin: 12.5px;
+    max-height: 375px;
+    max-width: 66.6666%;
     border-radius: 7.5px;
     box-shadow: $box-shadow-2;
     overflow: hidden;

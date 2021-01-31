@@ -4,16 +4,12 @@ import React, { useState, useRef } from "react";
 import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
-const Home = ({ root }) => {
+const Home = ({ scrollAmt }) => {
     const [cardVis, setCardVis] = useState(false);
-    const [scrollPos, setScrollPos] = useState(0);
-    const section = useRef(null);
-    root.addEventListener("scroll", () => {
-        setScrollPos(root.scrollTop / section.current.offsetHeight);
-    });
+    var scrollPos = scrollAmt / window.innerHeight;
 
     return (
-        <div className="section" id="home" ref={section}>
+        <div className="section" id="home">
             <div id="home-background">
                 {[1, 2, 3, 4, 5].map((num) => (
                     <div

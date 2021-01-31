@@ -1,16 +1,10 @@
 //ext
-import React, { useState } from "react";
+import React from "react";
 //int - util
 import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
-const Nav = () => {
-    const [currentSection, setCurrentSection] = useState(0);
-
-    root.addEventListener("scroll", () => {
-        setCurrentSection(Math.floor(root.scrollTop / window.innerHeight));
-    });
-
+const Nav = ({ currentSection }) => {
     let navClass = "";
     if (currentSection > 0) {
         navClass = "active";
