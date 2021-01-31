@@ -31,7 +31,13 @@ var About = function About() {
     className: "section-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
     className: "section-title"
-  }, "About")), "Hello! this is the about section"));
+  }, "About")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Hi, I\u2019m Ori! ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "I\u2019m a software engineer with an extensive audio engineering background. ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "My skillset in software engineering has primarily been focused on frontend development via React, JavaScript, CSS3, and HTML5, though I am always happy to dive into the backend of a project and work on organized, efficient data flow.", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "In conjunction, I\u2019ve logged countless hours in both large-scale recording facilities and small project studios, polishing my knowledge in audio recording, editing, and processing in the analog/digital domains. ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "My experience in these two fields has fueled my passion to take part in media related projects that strive for excellence in design, UX/UI, and functionality."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("iframe", {
+    src: "https://snapwidget.com/embed/265181",
+    className: "snapwidget-widget",
+    allowtransparency: "true",
+    frameBorder: "0",
+    scrolling: "no"
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
@@ -72,10 +78,15 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var Intro = function Intro(_ref) {
   var root = _ref.root;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      scrollPos = _useState2[0],
-      setScrollPos = _useState2[1];
+      cardVis = _useState2[0],
+      setCardVis = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      scrollPos = _useState4[0],
+      setScrollPos = _useState4[1];
 
   var section = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   root.addEventListener("scroll", function () {
@@ -105,12 +116,17 @@ var Intro = function Intro(_ref) {
       transform: "translateY(".concat(scrollPos * 125, "%)\n                    translateZ(-").concat(100 * scrollPos, "px)\n                    perspective(1000px)\n                    rotateX(").concat(90 * scrollPos, "deg)")
     },
     onAnimationEnd: function onAnimationEnd(e) {
-      return e.currentTarget.classList.remove("animated");
+      e.currentTarget.classList.remove("animated");
+      setCardVis(true);
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     id: "intro-image",
     src: "https://avatars.githubusercontent.com/u/71371489?s=460&u=0d99ba3b21759743f7b3e50716473e59027a4141&v=4"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Ori Ravid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Software & Audio Engineer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Ori Ravid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Software & Audio Engineer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "line".concat(cardVis ? " active" : "")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+    className: cardVis ? "active" : ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "#projects"
   }, "Projects")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "\u2022"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "#about"

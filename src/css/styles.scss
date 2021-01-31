@@ -189,9 +189,9 @@ h3 {
         }
 
         #intro-image {
-            width: 125px;
+            width: 115px;
             border-radius: 50%;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
         h1 {
@@ -204,12 +204,35 @@ h3 {
             font-size: 20px;
         }
 
+        .line {
+            height: 3px;
+            width: 0;
+            margin: 15px 0;
+            background-color: $color-blue2;
+            transition: all 0.5s;
+
+            &.active {
+                width: 100%;
+            }
+        }
+
         ul {
-            margin-top: 25px;
             width: 100%;
             text-transform: uppercase;
             display: flex;
             justify-content: space-between;
+            opacity: 0;
+            transition: all 0.5s;
+
+            &.active {
+                opacity: 1;
+            }
+
+            a {
+                font-size: 16px;
+                font-weight: 600;
+                color: $color-black;
+            }
         }
     }
 
@@ -291,12 +314,13 @@ h3 {
     text-transform: uppercase;
     padding: 5px 15px;
     transition: all 0.2s;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 7.5px 7.5px 0 0;
 
     &.active {
+        color: $color-white;
+        font-weight: 700;
         background-color: $color-blue1;
-        color: white;
         box-shadow: $box-shadow-3;
     }
 }
@@ -383,10 +407,10 @@ h3 {
         .project-type {
             display: inline-block;
             padding: 7.5px 12.5px;
-            background-color: #474747;
+            background-color: $color-black;
             border-radius: 7.5px;
             letter-spacing: 1.1px;
-            color: white;
+            color: $color-white;
             box-shadow: $box-shadow-3;
         }
 

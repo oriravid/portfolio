@@ -5,6 +5,7 @@ import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
 const Intro = ({ root }) => {
+    const [cardVis, setCardVis] = useState(false);
     const [scrollPos, setScrollPos] = useState(0);
     const section = useRef(null);
     root.addEventListener("scroll", () => {
@@ -36,9 +37,10 @@ const Intro = ({ root }) => {
                     perspective(1000px)
                     rotateX(${90 * scrollPos}deg)`,
                 }}
-                onAnimationEnd={(e) =>
-                    e.currentTarget.classList.remove("animated")
-                }
+                onAnimationEnd={(e) => {
+                    e.currentTarget.classList.remove("animated");
+                    setCardVis(true);
+                }}
             >
                 <img
                     id="intro-image"
@@ -46,7 +48,8 @@ const Intro = ({ root }) => {
                 />
                 <h1>Ori Ravid</h1>
                 <p>Software & Audio Engineer</p>
-                <ul>
+                <div className={`line${cardVis ? " active" : ""}`}></div>
+                <ul className={cardVis ? "active" : ""}>
                     <li>
                         <a href="#projects">Projects</a>
                     </li>
