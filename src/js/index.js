@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 //int - components
 import Nav from "./components/nav";
-import Intro from "./components/intro";
+import Home from "./components/home";
 import Projects from "./components/projects";
 import About from "./components/about";
 
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(
         <React.Fragment>
             <Nav root={root} />
-            <Intro root={root} />
+            <Home root={root} />
             <Projects />
             <About />
         </React.Fragment>,

@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
-const Intro = ({ root }) => {
+const Home = ({ root }) => {
     const [cardVis, setCardVis] = useState(false);
     const [scrollPos, setScrollPos] = useState(0);
     const section = useRef(null);
@@ -13,8 +13,8 @@ const Intro = ({ root }) => {
     });
 
     return (
-        <div className="section" id="intro" ref={section}>
-            <div id="intro-background">
+        <div className="section" id="home" ref={section}>
+            <div id="home-background">
                 {[1, 2, 3, 4, 5].map((num) => (
                     <div
                         key={num}
@@ -43,7 +43,7 @@ const Intro = ({ root }) => {
                 }}
             >
                 <img
-                    id="intro-image"
+                    id="home-image"
                     src="https://avatars.githubusercontent.com/u/71371489?s=460&u=0d99ba3b21759743f7b3e50716473e59027a4141&v=4"
                 />
                 <h1>Ori Ravid</h1>
@@ -65,11 +65,11 @@ const Intro = ({ root }) => {
             </div>
             <a href="#projects">
                 {ICONS.arrowDown(
-                    `intro-arrow pointer${scrollPos > 0 ? " inactive" : ""}`
+                    `home-arrow pointer${scrollPos > 0 ? " inactive" : ""}`
                 )}
             </a>
         </div>
     );
 };
 
-export default Intro;
+export default Home;

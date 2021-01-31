@@ -40,4 +40,4 @@ const Nav = () => {
 
 export default Nav;
 
-const navItems = ["intro", "projects", "about", "contact"];
+const navItems = ["home", "projects", "about", "contact"];

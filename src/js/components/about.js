@@ -28,13 +28,6 @@ const About = () => {
                     take part in media related projects that strive for
                     excellence in design, UX/UI, and functionality.
                 </p>
-                <iframe
-                    src="https://snapwidget.com/embed/265181"
-                    className="snapwidget-widget"
-                    allowtransparency="true"
-                    frameBorder="0"
-                    scrolling="no"
-                ></iframe>
             </div>
         </div>
     );

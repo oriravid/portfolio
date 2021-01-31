@@ -31,23 +31,17 @@ var About = function About() {
     className: "section-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
     className: "section-title"
-  }, "About")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Hi, I\u2019m Ori! ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "I\u2019m a software engineer with an extensive audio engineering background. ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "My skillset in software engineering has primarily been focused on frontend development via React, JavaScript, CSS3, and HTML5, though I am always happy to dive into the backend of a project and work on organized, efficient data flow.", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "In conjunction, I\u2019ve logged countless hours in both large-scale recording facilities and small project studios, polishing my knowledge in audio recording, editing, and processing in the analog/digital domains. ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "My experience in these two fields has fueled my passion to take part in media related projects that strive for excellence in design, UX/UI, and functionality."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("iframe", {
-    src: "https://snapwidget.com/embed/265181",
-    className: "snapwidget-widget",
-    allowtransparency: "true",
-    frameBorder: "0",
-    scrolling: "no"
-  })));
+  }, "About")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Hi, I\u2019m Ori! ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "I\u2019m a software engineer with an extensive audio engineering background. ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "My skillset in software engineering has primarily been focused on frontend development via React, JavaScript, CSS3, and HTML5, though I am always happy to dive into the backend of a project and work on organized, efficient data flow.", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "In conjunction, I\u2019ve logged countless hours in both large-scale recording facilities and small project studios, polishing my knowledge in audio recording, editing, and processing in the analog/digital domains. ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "My experience in these two fields has fueled my passion to take part in media related projects that strive for excellence in design, UX/UI, and functionality.")));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
 
 /***/ }),
 
-/***/ "./src/js/components/intro.js":
-/*!************************************!*\
-  !*** ./src/js/components/intro.js ***!
-  \************************************/
+/***/ "./src/js/components/home.js":
+/*!***********************************!*\
+  !*** ./src/js/components/home.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -75,7 +69,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Intro = function Intro(_ref) {
+var Home = function Home(_ref) {
   var root = _ref.root;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
@@ -94,10 +88,10 @@ var Intro = function Intro(_ref) {
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section",
-    id: "intro",
+    id: "home",
     ref: section
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "intro-background"
+    id: "home-background"
   }, [1, 2, 3, 4, 5].map(function (num) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: num,
@@ -120,7 +114,7 @@ var Intro = function Intro(_ref) {
       setCardVis(true);
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    id: "intro-image",
+    id: "home-image",
     src: "https://avatars.githubusercontent.com/u/71371489?s=460&u=0d99ba3b21759743f7b3e50716473e59027a4141&v=4"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Ori Ravid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Software & Audio Engineer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "line".concat(cardVis ? " active" : "")
@@ -134,10 +128,10 @@ var Intro = function Intro(_ref) {
     href: "#contact"
   }, "Contact")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "#projects"
-  }, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.arrowDown("intro-arrow pointer".concat(scrollPos > 0 ? " inactive" : ""))));
+  }, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.arrowDown("home-arrow pointer".concat(scrollPos > 0 ? " inactive" : ""))));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Intro);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
 
 /***/ }),
 
@@ -208,7 +202,7 @@ var Nav = function Nav() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Nav);
-var navItems = ["intro", "projects", "about", "contact"];
+var navItems = ["home", "projects", "about", "contact"];
 
 /***/ }),
 
@@ -249,28 +243,12 @@ var Projects = function Projects() {
       selectedType = _useState2[0],
       setType = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(projects[0]),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState4 = _slicedToArray(_useState3, 2),
       selectedProject = _useState4[0],
-      setProject = _useState4[1]; //detail view
+      setProject = _useState4[1];
 
-
-  var detailView;
-
-  var openDetailView = function openDetailView(project) {
-    setProject(project);
-    detailView.classList.add("active");
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
-
-  var closeDetailView = function closeDetailView() {
-    detailView.classList.remove("active");
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section",
     id: "projects"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -295,14 +273,14 @@ var Projects = function Projects() {
     return selectedType === "ALL" ? true : project.type === selectedType;
   }).map(function (project, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      key: Math.random(),
+      key: types.indexOf(selectedType) * projects.length + idx,
       className: "project-list-item ".concat(project.type.toLowerCase(), " pointer"),
       style: {
         backgroundImage: "url(".concat(project.image, ")"),
         animationDelay: "".concat(idx * 0.25, "s")
       },
       onClick: function onClick() {
-        return openDetailView(project);
+        return setProject(project);
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "project-overlay"
@@ -317,18 +295,20 @@ var Projects = function Projects() {
     }, _utils_helpers__WEBPACK_IMPORTED_MODULE_1__.dateFormatter(project.date, "short")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
       className: "project-type"
     }, project.type))));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  })))), selectedProject ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "project-detail-container",
-    ref: function ref(_ref) {
-      return detailView = _ref;
+    onClick: function onClick(e) {
+      if (e.target === e.currentTarget) setProject(null);
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section-inner"
-  }, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.close("detail-close", function () {
-    return closeDetailView();
+  }, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.close("detail-close pointer", function () {
+    return setProject(null);
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "project-detail-info"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, selectedProject.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, _utils_helpers__WEBPACK_IMPORTED_MODULE_1__.dateFormatter(selectedProject.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, selectedProject.description), Object.keys(selectedProject.links).map(function (linkText) {
+    className: "project-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, selectedProject.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, _utils_helpers__WEBPACK_IMPORTED_MODULE_1__.dateFormatter(selectedProject.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: selectedProject === null || selectedProject === void 0 ? void 0 : selectedProject.image
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, selectedProject.description), Object.keys(selectedProject.links).map(function (linkText) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
       key: linkText,
       href: selectedProject.links[linkText],
@@ -336,11 +316,7 @@ var Projects = function Projects() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "button primary"
     }, linkText));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "project-detail-image"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: selectedProject === null || selectedProject === void 0 ? void 0 : selectedProject.image
-  }))))));
+  })))) : "");
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Projects);
@@ -395,7 +371,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/nav */ "./src/js/components/nav.js");
-/* harmony import */ var _components_intro__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/intro */ "./src/js/components/intro.js");
+/* harmony import */ var _components_home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/home */ "./src/js/components/home.js");
 /* harmony import */ var _components_projects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/projects */ "./src/js/components/projects.js");
 /* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/about */ "./src/js/components/about.js");
 //ext
@@ -410,7 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_nav__WEBPACK_IMPORTED_MODULE_2__.default, {
     root: root
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_intro__WEBPACK_IMPORTED_MODULE_3__.default, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_home__WEBPACK_IMPORTED_MODULE_3__.default, {
     root: root
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_projects__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_about__WEBPACK_IMPORTED_MODULE_5__.default, null)), root);
 });
