@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <Nav currentSection={currentSection} />
                 <Home scrollAmt={scrollAmt} />
                 <Projects />
-                <About />
+                <About scrollAmt={scrollAmt - window.innerHeight * 2} />
             </React.Fragment>
         );
     };

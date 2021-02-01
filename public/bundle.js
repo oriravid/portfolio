@@ -21,12 +21,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var About = function About() {
+var About = function About(_ref) {
+  var scrollAmt = _ref.scrollAmt;
+  var scrollPct = scrollAmt / window.innerHeight < -1 ? -1 : scrollAmt / window.innerHeight;
+  console.log(scrollPct);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section",
     id: "about"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "section-inner"
+    className: "section-inner" // style={{ transform: `translateX(${scrollPct * 100}%)` }}
+
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
@@ -77,7 +81,7 @@ var Home = function Home(_ref) {
       cardVis = _useState2[0],
       setCardVis = _useState2[1];
 
-  var scrollPos = scrollAmt / window.innerHeight;
+  var scrollPct = scrollAmt / window.innerHeight > 1 ? 1 : scrollAmt / window.innerHeight;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section",
     id: "home"
@@ -89,7 +93,7 @@ var Home = function Home(_ref) {
       className: "slice animated",
       style: {
         animationDelay: "".concat(num * 0.2, "s"),
-        transform: "translateY(".concat(20 * num * scrollPos, "%)")
+        transform: "translateY(".concat(20 * num * scrollPct, "%)")
       },
       onAnimationEnd: function onAnimationEnd(e) {
         return e.currentTarget.classList.remove("animated");
@@ -98,7 +102,7 @@ var Home = function Home(_ref) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "section-inner animated",
     style: {
-      transform: "translateY(".concat(scrollPos * 125, "%)\n                    translateZ(-").concat(100 * scrollPos, "px)\n                    perspective(1000px)\n                    rotateX(").concat(90 * scrollPos, "deg)")
+      transform: "translateY(".concat(scrollPct * 125, "%)\n                    translateZ(-").concat(100 * scrollPct, "px)\n                    perspective(1000px)\n                    rotateX(").concat(90 * scrollPct, "deg)")
     },
     onAnimationEnd: function onAnimationEnd(e) {
       e.currentTarget.classList.remove("animated");
@@ -119,7 +123,7 @@ var Home = function Home(_ref) {
     href: "#contact"
   }, "Contact")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "#projects"
-  }, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.arrowDown("home-arrow pointer".concat(scrollPos > 0 ? " inactive" : ""))));
+  }, _utils_icons__WEBPACK_IMPORTED_MODULE_2__.arrowDown("home-arrow pointer".concat(scrollPct > 0 ? " inactive" : ""))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
@@ -389,7 +393,9 @@ document.addEventListener("DOMContentLoaded", function () {
       currentSection: currentSection
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_home__WEBPACK_IMPORTED_MODULE_3__.default, {
       scrollAmt: scrollAmt
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_projects__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_about__WEBPACK_IMPORTED_MODULE_5__.default, null));
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_projects__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_about__WEBPACK_IMPORTED_MODULE_5__.default, {
+      scrollAmt: scrollAmt - window.innerHeight * 2
+    }));
   };
 
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, null), root);

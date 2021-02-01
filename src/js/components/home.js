@@ -6,7 +6,8 @@ import * as ICONS from "../utils/icons";
 
 const Home = ({ scrollAmt }) => {
     const [cardVis, setCardVis] = useState(false);
-    var scrollPos = scrollAmt / window.innerHeight;
+    var scrollPct =
+        scrollAmt / window.innerHeight > 1 ? 1 : scrollAmt / window.innerHeight;
 
     return (
         <div className="section" id="home">
@@ -17,7 +18,7 @@ const Home = ({ scrollAmt }) => {
                         className="slice animated"
                         style={{
                             animationDelay: `${num * 0.2}s`,
-                            transform: `translateY(${20 * num * scrollPos}%)`,
+                            transform: `translateY(${20 * num * scrollPct}%)`,
                         }}
                         onAnimationEnd={(e) =>
                             e.currentTarget.classList.remove("animated")
@@ -28,10 +29,10 @@ const Home = ({ scrollAmt }) => {
             <div
                 className="section-inner animated"
                 style={{
-                    transform: `translateY(${scrollPos * 125}%)
-                    translateZ(-${100 * scrollPos}px)
+                    transform: `translateY(${scrollPct * 125}%)
+                    translateZ(-${100 * scrollPct}px)
                     perspective(1000px)
-                    rotateX(${90 * scrollPos}deg)`,
+                    rotateX(${90 * scrollPct}deg)`,
                 }}
                 onAnimationEnd={(e) => {
                     e.currentTarget.classList.remove("animated");
@@ -61,7 +62,7 @@ const Home = ({ scrollAmt }) => {
             </div>
             <a href="#projects">
                 {ICONS.arrowDown(
-                    `home-arrow pointer${scrollPos > 0 ? " inactive" : ""}`
+                    `home-arrow pointer${scrollPct > 0 ? " inactive" : ""}`
                 )}
             </a>
         </div>

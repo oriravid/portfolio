@@ -4,10 +4,19 @@ import React from "react";
 import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
-const About = () => {
+const About = ({ scrollAmt }) => {
+    var scrollPct =
+        scrollAmt / window.innerHeight < -1
+            ? -1
+            : scrollAmt / window.innerHeight;
+    console.log(scrollPct);
+
     return (
         <div className="section" id="about">
-            <div className="section-inner">
+            <div
+                className="section-inner"
+                // style={{ transform: `translateX(${scrollPct * 100}%)` }}
+            >
                 <div className="section-header">
                     <h2 className="section-title">About</h2>
                 </div>
