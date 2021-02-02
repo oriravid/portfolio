@@ -12,11 +12,19 @@ import Home from "./js/components/home";
 import Projects from "./js/components/projects";
 import About from "./js/components/about";
 
+//Google Analytics
 function initializeReactGA() {
     ReactGA.initialize("UA-50867458-1");
     ReactGA.pageview("/");
 }
 initializeReactGA();
+
+//Set app height
+const setHeight = () => {
+    document.body.style.height = window.innerHeight + "px";
+};
+window.addEventListener("resize", setHeight);
+setHeight();
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");

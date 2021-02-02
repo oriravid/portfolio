@@ -17,7 +17,7 @@ const Home = ({ scrollAmt }) => {
                         className="slice animated"
                         style={{
                             animationDelay: `${num * 0.2}s`,
-                            transform: `translateY(${20 * num * scrollPct}%)`,
+                            transform: `translateY(-${30 * num * scrollPct}%)`,
                         }}
                         onAnimationEnd={(e) =>
                             e.currentTarget.classList.remove("animated")
@@ -32,6 +32,7 @@ const Home = ({ scrollAmt }) => {
                     translateZ(-${100 * scrollPct}px)
                     perspective(1000px)
                     rotateX(${90 * scrollPct}deg)`,
+                    opacity: `${1 - scrollPct}`,
                 }}
                 onAnimationEnd={(e) => {
                     e.currentTarget.classList.remove("animated");
