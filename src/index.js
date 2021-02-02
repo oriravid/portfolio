@@ -34,10 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return (
             <HttpsRedirect>
-                {/* <Nav currentSection={currentSection} /> */}
-                <Home scrollAmt={scrollAmt} />
-                {/* <Projects /> */}
-                {/* <About scrollAmt={scrollAmt - window.innerHeight * 2} /> */}
+                <React.Fragment>
+                    {/* <Nav currentSection={currentSection} /> */}
+                    <Home scrollAmt={scrollAmt} />
+                    {/* <Projects /> */}
+                    {/* <About scrollAmt={scrollAmt - window.innerHeight * 2} /> */}
+                </React.Fragment>
             </HttpsRedirect>
         );
     };

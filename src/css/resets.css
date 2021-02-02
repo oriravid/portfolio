@@ -143,6 +143,7 @@ ul {
     -ms-user-select: none;
     user-select: none;
     -webkit-user-drag: none;
+    -moz-user-drag: none;
 }
 
 /* HTML5 display-role reset for older browsers */
