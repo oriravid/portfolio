@@ -1,8 +1,5 @@
 //ext
 import React from "react";
-//int - util
-import * as HELPERS from "../utils/helpers";
-import * as ICONS from "../utils/icons";
 
 const Nav = ({ currentSection }) => {
     let navClass = "";

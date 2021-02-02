@@ -23,7 +23,7 @@ export const dateFormatter = (date, short) => {
         day = parts[2],
         year = parts[0];
 
-    if (day[0] == 0) {
+    if (day[0] === 0) {
         day = day[1]
     }
 

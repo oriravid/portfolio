@@ -1,15 +1,12 @@
 //ext
 import React from "react";
-//int - util
-import * as HELPERS from "../utils/helpers";
-import * as ICONS from "../utils/icons";
 
 const About = ({ scrollAmt }) => {
-    var scrollPct =
-        scrollAmt / window.innerHeight < -1
-            ? -1
-            : scrollAmt / window.innerHeight;
-    console.log(scrollPct);
+    // var scrollPct =
+    //     scrollAmt / window.innerHeight < -1
+    //         ? -1
+    //         : scrollAmt / window.innerHeight;
+    // console.log(scrollPct);
 
     return (
         <div className="section" id="about">

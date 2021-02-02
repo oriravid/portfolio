@@ -3,6 +3,11 @@ import React, { useState } from "react";
 //int - util
 import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
+//int - images
+import appo_music from "../../imgs/appo_music.png";
+import devhub from "../../imgs/devhub.png";
+import fletcher_silent from "../../imgs/fletcher_silent.jpg";
+import lyrassist from "../../imgs/lyrassist.png";
 
 const Projects = () => {
     const [selectedType, setType] = useState("ALL");
@@ -90,7 +95,10 @@ const Projects = () => {
                             <span>
                                 {HELPERS.dateFormatter(selectedProject.date)}
                             </span>
-                            <img src={selectedProject?.image} />
+                            <img
+                                src={selectedProject?.image}
+                                alt={selectedProject?.name}
+                            />
                             <p>{selectedProject.description}</p>
                             {Object.keys(selectedProject.links).map(
                                 (linkText) => (
@@ -125,7 +133,7 @@ const projects = [
         description:
             "Appo Music is a full-stack clone of the incredible Apple Music online streaming platform, with an aim to re-create it's core features, seamless design, and excellent user experience.",
         date: "2021-01-01",
-        image: "../src/imgs/appo_music.png",
+        image: appo_music,
         links: { view: "https://appo-music.herokuapp.com/" },
         type: "CODE",
     },
@@ -133,7 +141,7 @@ const projects = [
         title: "Fletcher – Silent Night",
         description: "bunch of random text",
         date: "2020-12-01",
-        image: "../src/imgs/fletcher_silent.jpg",
+        image: fletcher_silent,
         links: {
             listen:
                 "https://music.apple.com/us/album/silent-night-single/1541041366",
@@ -145,7 +153,7 @@ const projects = [
         description:
             "LYRASSIST is a word recommendation tool and visualizer for writers. Built strictly with JavaScript/JQuery, HTML and CSS to showcase front-end animation/transitions.",
         date: "2020-11-30",
-        image: "../src/imgs/lyrassist.png",
+        image: lyrassist,
         links: { view: "https://oriravid.github.io/LYRASSIST/" },
         type: "CODE",
     },
@@ -154,7 +162,7 @@ const projects = [
         description:
             "devHUB is a platform that empowers developers to showcase themselves and their work, connect with other developers, and access job opportunities. General professionals have Linkedin, designers have Dribble, and now developers have devHUB.",
         date: "2020-11-25",
-        image: "../src/imgs/devhub.png",
+        image: devhub,
         links: { view: "https://getdevhub.herokuapp.com/#/" },
         type: "CODE",
     },

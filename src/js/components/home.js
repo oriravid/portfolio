@@ -1,7 +1,6 @@
 //ext
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 //int - util
-import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
 const Home = ({ scrollAmt }) => {
@@ -41,6 +40,7 @@ const Home = ({ scrollAmt }) => {
             >
                 <img
                     id="home-image"
+                    alt="Ori Ravid"
                     src="https://avatars.githubusercontent.com/u/71371489?s=460&u=0d99ba3b21759743f7b3e50716473e59027a4141&v=4"
                 />
                 <h1>Ori Ravid</h1>

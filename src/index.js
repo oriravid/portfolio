@@ -1,11 +1,14 @@
 //ext
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+//int - css
+import "./css/resets.css";
+import "./css/styles.css";
 //int - components
-import Nav from "./components/nav";
-import Home from "./components/home";
-import Projects from "./components/projects";
-import About from "./components/about";
+import Nav from "./js/components/nav";
+import Home from "./js/components/home";
+import Projects from "./js/components/projects";
+import About from "./js/components/about";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
