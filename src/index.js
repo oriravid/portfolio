@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 //int - css
 import "./css/resets.css";
-import "./css/styles.css";
+import "./css/styles.scss";
 //int - components
 import Nav from "./js/components/nav";
 import Home from "./js/components/home";
