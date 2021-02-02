@@ -48,23 +48,42 @@ const Home = ({ scrollAmt }) => {
                 <div className={`line${cardVis ? " active" : ""}`}></div>
                 <ul className={cardVis ? "active" : ""}>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a
+                            href="https://www.linkedin.com/in/oriravid/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            LinkedIn
+                        </a>
                     </li>
                     <li>•</li>
                     <li>
-                        <a href="#about">About</a>
+                        <a
+                            href="https://github.com/oriravid"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            GitHub
+                        </a>
                     </li>
                     <li>•</li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a
+                            href="https://appo-music.herokuapp.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Appo Music
+                        </a>
                     </li>
                 </ul>
+                <div className="coming-soon">Coming Soon!</div>
             </div>
-            <a href="#projects">
+            {/* <a href="#projects">
                 {ICONS.arrowDown(
                     `home-arrow pointer${scrollPct > 0 ? " inactive" : ""}`
                 )}
-            </a>
+            </a> */}
         </div>
     );
 };

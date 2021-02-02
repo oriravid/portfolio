@@ -259,6 +259,16 @@ h3 {
             pointer-events: none;
         }
     }
+
+    .coming-soon {
+        background-color: $color-blue1;
+        color: $color-white;
+        font-weight: 500;
+        margin-top: 25px;
+        padding: 7.5px 15px;
+        border-radius: 7.5px;
+        animation: fade-in 0.75s ease-out 2.25s backwards;
+    }
 }
 
 #home-background {
