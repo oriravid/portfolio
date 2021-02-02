@@ -1,6 +1,7 @@
 //ext
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import HttpsRedirect from "react-https-redirect";
 //int - css
 import "./css/resets.css";
 import "./css/styles.scss";
@@ -25,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         return (
-            <React.Fragment>
+            <HttpsRedirect>
                 <Nav currentSection={currentSection} />
                 <Home scrollAmt={scrollAmt} />
                 <Projects />
                 <About scrollAmt={scrollAmt - window.innerHeight * 2} />
-            </React.Fragment>
+            </HttpsRedirect>
         );
     };
 
