@@ -32,6 +32,7 @@ input {
 
 body {
     line-height: 1.5;
+    height: 100vh;
 }
 
 a,
@@ -77,6 +78,7 @@ h3 {
 ////////////////////////////////////////////////////////////////////////////////
 
 .section {
+    position: relative;
     height: 100vh;
     scroll-snap-align: start;
     padding: 25px;
