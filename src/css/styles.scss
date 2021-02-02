@@ -17,6 +17,9 @@ $box-shadow-4: 0px 0px 20px rgba(46, 16, 16, 0.5);
 $gray-text-1: rgba(60, 60, 67, 0.4);
 $gray-text-2: rgba(60, 60, 67, 0.6);
 
+$tablet: 1200px;
+$mobile: 840px;
+
 // GENERAL
 ////////////////////////////////////////////////////////////////////////////////
 // html,
@@ -32,7 +35,6 @@ input {
 
 body {
     line-height: 1.5;
-    height: 100vh;
 }
 
 a,
@@ -68,7 +70,8 @@ h3 {
 }
 
 #root {
-    height: 100vh;
+    position: relative;
+    height: 100%;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -79,9 +82,10 @@ h3 {
 
 .section {
     position: relative;
-    height: 100vh;
+    height: 100%;
     scroll-snap-align: start;
     padding: 25px;
+    overflow-x: hidden;
 }
 
 .section-inner {
@@ -240,10 +244,17 @@ h3 {
         }
     }
 
+    @media only screen and (max-width: $mobile) {
+        .section-inner {
+            max-width: 90%;
+            padding: 30px 35px;
+        }
+    }
+
     .home-arrow {
         position: absolute;
-        bottom: 25px;
-        left: calc(50% - 50px);
+        bottom: 0;
+        left: calc(50% - 62.5px);
         z-index: 5;
         height: 125px;
         width: 125px;
