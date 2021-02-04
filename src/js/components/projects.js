@@ -78,47 +78,51 @@ const Projects = () => {
                             ))}
                     </div>
                 </div>
-            </div>
-            {selectedProject ? (
-                <div
-                    id="project-detail-container"
-                    onClick={(e) => {
-                        if (e.target === e.currentTarget) setProject(null);
-                    }}
-                >
-                    <div className="section-inner">
-                        {ICONS.close("detail-close pointer", () =>
-                            setProject(null)
-                        )}
-                        <div className="project-content">
-                            <h3>{selectedProject.title}</h3>
-                            <span>
-                                {HELPERS.dateFormatter(selectedProject.date)}
-                            </span>
-                            <img
-                                src={selectedProject?.image}
-                                alt={selectedProject?.name}
-                            />
-                            <p>{selectedProject.description}</p>
-                            {Object.keys(selectedProject.links).map(
-                                (linkText) => (
-                                    <a
-                                        key={linkText}
-                                        href={selectedProject.links[linkText]}
-                                        target="_blank"
-                                    >
-                                        <div className="button primary">
-                                            {linkText}
-                                        </div>
-                                    </a>
-                                )
+                {selectedProject ? (
+                    <div
+                        id="project-detail-container"
+                        onClick={(e) => {
+                            if (e.target === e.currentTarget) setProject(null);
+                        }}
+                    >
+                        <div className="section-inner">
+                            {ICONS.close("detail-close pointer", () =>
+                                setProject(null)
                             )}
+                            <div className="project-content">
+                                <h3>{selectedProject.title}</h3>
+                                <span>
+                                    {HELPERS.dateFormatter(
+                                        selectedProject.date
+                                    )}
+                                </span>
+                                <img
+                                    src={selectedProject?.image}
+                                    alt={selectedProject?.name}
+                                />
+                                <p>{selectedProject.description}</p>
+                                {Object.keys(selectedProject.links).map(
+                                    (linkText) => (
+                                        <a
+                                            key={linkText}
+                                            href={
+                                                selectedProject.links[linkText]
+                                            }
+                                            target="_blank"
+                                        >
+                                            <div className="button primary">
+                                                {linkText}
+                                            </div>
+                                        </a>
+                                    )
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            ) : (
-                ""
-            )}
+                ) : (
+                    ""
+                )}
+            </div>
         </React.Fragment>
     );
 };
