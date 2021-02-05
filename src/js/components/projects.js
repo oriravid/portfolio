@@ -48,17 +48,23 @@ const Projects = ({ scrollAmt }) => {
                                             projects.length +
                                         idx
                                     }
-                                    className={`project-list-item ${project.type.toLowerCase()} pointer`}
+                                    className="project-list-item pointer"
                                     style={{
                                         backgroundImage: `url(${project.image})`,
                                         animationDelay: `${idx * 0.25}s`,
                                     }}
                                     onClick={() => setProject(project)}
                                 >
-                                    <div className="project-overlay">
+                                    <div
+                                        className={`project-overlay ${project.type.toLowerCase()}`}
+                                    >
                                         <div className="project-overlay-inner">
-                                            <h3 className="project-title">
+                                            <h2 className="project-title">
                                                 {project.title}
+                                            </h2>
+                                            <div className="divider"></div>
+                                            <h3 className="project-subtitle">
+                                                {project.subtitle}
                                             </h3>
                                         </div>
                                         <div className="project-overlay-inner">
@@ -68,7 +74,7 @@ const Projects = ({ scrollAmt }) => {
                                                     "short"
                                                 )}
                                             </span>
-                                            <span className="project-type">
+                                            <span className={"project-type"}>
                                                 {project.type}
                                             </span>
                                         </div>

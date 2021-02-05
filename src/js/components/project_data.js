@@ -14,6 +14,9 @@ import haley_dream from "../../imgs/haley_dream.png";
 import reyna_way from "../../imgs/reyna_way.jpg";
 import sky_downhill from "../../imgs/sky_downhill.jpg";
 import frank_provider from "../../imgs/frank_provider.jpg";
+import pria_foolish from "../../imgs/pria_foolish.jpg";
+import loko_loko from "../../imgs/loko_loko.jpg";
+import first_man from "../../imgs/first_man.jpg";
 
 export const types = ["ALL", "MUSIC", "CODE"];
 
@@ -21,6 +24,7 @@ export const projects = [
     {
         id: 1,
         title: "Appo Music",
+        subtitle: "React, Redux, Rails, PostgreSQL",
         description:
             "Appo Music is a full-stack clone of the incredible Apple Music online streaming platform, with an aim to re-create it's core features, seamless design, and excellent user experience.",
         date: "2021-01-01",
@@ -31,6 +35,7 @@ export const projects = [
     {
         id: 2,
         title: "LYRASSIST",
+        subtitle: "JavaScript, jQuery",
         description:
             "LYRASSIST is a word recommendation tool and visualizer for writers. Built strictly with JavaScript/JQuery, HTML and CSS to showcase front-end animation/transitions.",
         date: "2020-11-30",
@@ -41,6 +46,7 @@ export const projects = [
     {
         id: 3,
         title: "devHub",
+        subtitle: "React, Express, Node, MongoDB",
         description:
             "devHUB is a platform that empowers developers to showcase themselves and their work, connect with other developers, and access job opportunities. General professionals have Linkedin, designers have Dribble, and now developers have devHUB.",
         date: "2020-11-25",
@@ -50,7 +56,8 @@ export const projects = [
     },
     {
         id: 4,
-        title: "FLETCHER – Silent Night",
+        title: "Silent Night",
+        subtitle: "FLETCHER",
         description: "Credits: Assistant Engineer",
         date: "2020-12-01",
         image: fletcher_silent,
@@ -62,7 +69,8 @@ export const projects = [
     },
     {
         id: 5,
-        title: "Wild Rivers – Love Gone Wrong",
+        title: "Love Gone Wrong",
+        subtitle: "Wild Rivers",
         description: "Credits: Assistant Engineer",
         date: "2021-01-28",
         image: wild_love,
@@ -76,7 +84,8 @@ export const projects = [
     },
     {
         id: 6,
-        title: "Zosia – The Alter",
+        title: "The Alter",
+        subtitle: "Zosia",
         description: "Credits: Assistant Engineer",
         date: "2021-02-04",
         image: zosia_alter,
@@ -90,7 +99,8 @@ export const projects = [
     },
     {
         id: 7,
-        title: "Zosia – 7 Suns",
+        title: "7 Suns",
+        subtitle: "Zosia",
         description: "Credits: Assistant Engineer",
         date: "2020-11-19",
         image: zosia_suns,
@@ -104,7 +114,8 @@ export const projects = [
     },
     {
         id: 8,
-        title: "Caitlyn Smith – Fix You",
+        title: "Fix You",
+        subtitle: "Caitlyn Smith",
         description: "Credits: Assistant Engineer",
         date: "2020-09-25",
         image: caitlyn_fix,
@@ -119,7 +130,8 @@ export const projects = [
     },
     {
         id: 9,
-        title: "FLETCHER – Forver (Stripped)",
+        title: "Forever (Stripped)",
+        subtitle: "FLETCHER",
         description: "Credits: Assistant Engineer",
         date: "2020-05-07",
         image: fletcher_forever,
@@ -133,7 +145,8 @@ export const projects = [
     },
     {
         id: 10,
-        title: "93 Punx - Self Titled",
+        title: "93 Punx",
+        subtitle: "93 Punx",
         description:
             "Credits: Touring Production Manager, FOH Engineer, Vocal Processing/Playback",
         date: "2019-08-23",
@@ -147,7 +160,8 @@ export const projects = [
     },
     {
         id: 11,
-        title: "Jessie J - This Christmas Day",
+        title: "This Christmas Day",
+        subtitle: "Jessie J",
         description: "Credits: Assistant Engineer",
         date: "2018-10-26",
         image: jessie_christmas,
@@ -162,7 +176,8 @@ export const projects = [
     },
     {
         id: 12,
-        title: "Haley Reinhart - Dreams",
+        title: "Dreams",
+        subtitle: "Haley Reinhart",
         description: "Credits: Assistant Engineer",
         date: "2019-04-08",
         image: haley_dream,
@@ -173,7 +188,8 @@ export const projects = [
     },
     {
         id: 13,
-        title: "REYNA - The Way I Loved You",
+        title: "The Way I Loved You",
+        subtitle: "REYNA",
         description: "Credits: Assistant Engineer",
         date: "2019-06-21",
         image: reyna_way,
@@ -187,7 +203,8 @@ export const projects = [
     },
     {
         id: 14,
-        title: "Sky Ferreira - Downhill Lullaby",
+        title: "Downhill Lullaby",
+        subtitle: "Sky Ferreira",
         description: "Credits: Assistant Engineer",
         date: "2019-03-27",
         image: sky_downhill,
@@ -201,7 +218,8 @@ export const projects = [
     },
     {
         id: 15,
-        title: "Frank Ocean - Provider",
+        title: "Provider",
+        subtitle: "Frank Ocean",
         description: "Credits: Assistant Engineer",
         date: "2017-08-28",
         image: frank_provider,
@@ -210,6 +228,52 @@ export const projects = [
                 "https://music.apple.com/us/album/provider-single/1276055312?i=1276055314&ign-gact=3&ls=1",
             Spotify: "https://open.spotify.com/album/7uSaHPXSYaRB3FxLOmatG9",
             YouTube: "XKQNJzquduI",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 16,
+        title: "Foolish",
+        subtitle: "Pria Cotterell",
+        description:
+            "Credits: Recording Engineer, Mix Engineer, Add'l Production",
+        date: "2019-04-07",
+        image: pria_foolish,
+        links: {
+            Apple: "https://music.apple.com/us/album/foolish-single/1459294329",
+            Spotify: "https://open.spotify.com/album/1fKb9VHVdBKIWbi0nx3zZW",
+            YouTube: "cWoZAB44BiU",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 17,
+        title: "Loko Wit Tha Mask EP",
+        subtitle: "Loko Wit Tha Mask",
+        description:
+            "Credits: Recording Engineer, Mix Engineer, Add'l Production (Gang Member, OTS Freestyle)",
+        date: "2019-10-11",
+        image: loko_loko,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/loko-wit-tha-mask-ep/1482348618",
+            Spotify: "https://open.spotify.com/album/67uIzBLC1DhJ8cUSTVJhnd",
+            YouTube: "NM-flyvuFGI",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 18,
+        title: "Original Motion Picture Soundtrack",
+        subtitle: "First Man",
+        description: "Credits: Assistant Engineer",
+        date: "2018-10-12",
+        image: first_man,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/first-man-original-motion-picture-soundtrack/1437211399",
+            Spotify: "https://open.spotify.com/album/4NFpOHIv0hJa9of0IQsgKw",
+            YouTube: "KqpMAYaKLgI",
         },
         type: "MUSIC",
     },
