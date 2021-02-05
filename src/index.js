@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import HttpsRedirect from "react-https-redirect";
-import ReactGA, { initialize } from "react-ga";
+import ReactGA from "react-ga";
 //int - css
 import "./css/resets.css";
 import "./css/styles.scss";
 //int - components
-import Nav from "./js/components/nav";
+// import Nav from "./js/components/nav";
 import Home from "./js/components/home";
 import Projects from "./js/components/projects";
 import About from "./js/components/about";
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <React.Fragment>
                     {/* <Nav currentSection={currentSection} /> */}
                     <Home scrollAmt={scrollAmt} />
-                    <Projects />
+                    <Projects scrollAmt={scrollAmt} />
                     <About scrollAmt={scrollAmt - window.innerHeight * 2} />
                 </React.Fragment>
             </HttpsRedirect>

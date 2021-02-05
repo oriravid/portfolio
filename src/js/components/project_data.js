@@ -1,0 +1,216 @@
+//int - images
+import appo_music from "../../imgs/appo_music.png";
+import devhub from "../../imgs/devhub.png";
+import lyrassist from "../../imgs/lyrassist.png";
+import fletcher_silent from "../../imgs/fletcher_silent.jpg";
+import wild_love from "../../imgs/wild_love.jpg";
+import zosia_alter from "../../imgs/zosia_alter.jpeg";
+import zosia_suns from "../../imgs/zosia_suns.jpg";
+import caitlyn_fix from "../../imgs/caitlyn_fix.jpg";
+import fletcher_forever from "../../imgs/fletcher_forever.jpg";
+import ninetythree_punx from "../../imgs/ninetythree_punx.jpg";
+import jessie_christmas from "../../imgs/jessie_christmas.jpg";
+import haley_dream from "../../imgs/haley_dream.png";
+import reyna_way from "../../imgs/reyna_way.jpg";
+import sky_downhill from "../../imgs/sky_downhill.jpg";
+import frank_provider from "../../imgs/frank_provider.jpg";
+
+export const types = ["ALL", "MUSIC", "CODE"];
+
+export const projects = [
+    {
+        id: 1,
+        title: "Appo Music",
+        description:
+            "Appo Music is a full-stack clone of the incredible Apple Music online streaming platform, with an aim to re-create it's core features, seamless design, and excellent user experience.",
+        date: "2021-01-01",
+        image: appo_music,
+        links: { view: "https://appo-music.herokuapp.com/" },
+        type: "CODE",
+    },
+    {
+        id: 2,
+        title: "LYRASSIST",
+        description:
+            "LYRASSIST is a word recommendation tool and visualizer for writers. Built strictly with JavaScript/JQuery, HTML and CSS to showcase front-end animation/transitions.",
+        date: "2020-11-30",
+        image: lyrassist,
+        links: { view: "https://oriravid.github.io/LYRASSIST/" },
+        type: "CODE",
+    },
+    {
+        id: 3,
+        title: "devHub",
+        description:
+            "devHUB is a platform that empowers developers to showcase themselves and their work, connect with other developers, and access job opportunities. General professionals have Linkedin, designers have Dribble, and now developers have devHUB.",
+        date: "2020-11-25",
+        image: devhub,
+        links: { view: "https://getdevhub.herokuapp.com/#/" },
+        type: "CODE",
+    },
+    {
+        id: 4,
+        title: "FLETCHER – Silent Night",
+        description: "Credits: Assistant Engineer",
+        date: "2020-12-01",
+        image: fletcher_silent,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/silent-night-single/1541041366",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 5,
+        title: "Wild Rivers – Love Gone Wrong",
+        description: "Credits: Assistant Engineer",
+        date: "2021-01-28",
+        image: wild_love,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/love-gone-wrong-single/1548050610?at=11l69&ct=FFM_b96c67b884e4d22bc887e7bb8d0e9650&uo=4&app=music",
+            Spotify: "https://open.spotify.com/album/2y0LnZGWcOLaHhzLpSMjHR",
+            YouTube: "w2MmlRb0lNA",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 6,
+        title: "Zosia – The Alter",
+        description: "Credits: Assistant Engineer",
+        date: "2021-02-04",
+        image: zosia_alter,
+        links: {
+            Apple: "https://music.apple.com/us/album/7-suns-single/1538318654",
+            Spotify:
+                "https://open.spotify.com/album/2itxaK9bdTAfQlxUcw10nB?si=15rypYVHRpGLZoCrbOrv_A&nd=1",
+            YouTube: "-DLlwdJnkfE",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 7,
+        title: "Zosia – 7 Suns",
+        description: "Credits: Assistant Engineer",
+        date: "2020-11-19",
+        image: zosia_suns,
+        links: {
+            Apple: "https://music.apple.com/us/album/7-suns-single/1538318654",
+            Spotify:
+                "https://open.spotify.com/album/6aQ4SFj2K6ESZ27bQRCJBq?si=zzPS1HM_SJ-s0YE3aWyg4g&nd=1",
+            YouTube: "pp-o6SV-hOw",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 8,
+        title: "Caitlyn Smith – Fix You",
+        description: "Credits: Assistant Engineer",
+        date: "2020-09-25",
+        image: caitlyn_fix,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/supernova-deluxe/1531535233",
+            Spotify:
+                "https://open.spotify.com/album/7EVVjcblXEwmzOUFSIdExn?si=JxN3K9g-SyyQzOo2vB_Pvw&nd=1",
+            YouTube: "eUuInNTFFtY",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 9,
+        title: "FLETCHER – Forver (Stripped)",
+        description: "Credits: Assistant Engineer",
+        date: "2020-05-07",
+        image: fletcher_forever,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/1510078837?ign-itscg=30440&ign-itsct=catchall_p1",
+            Spotify: "https://open.spotify.com/album/5ctNXburXjfykf343XvgMp",
+            YouTube: "LoJ7Q_9Kf_4",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 10,
+        title: "93 Punx - Self Titled",
+        description:
+            "Credits: Touring Production Manager, FOH Engineer, Vocal Processing/Playback",
+        date: "2019-08-23",
+        image: ninetythree_punx,
+        links: {
+            Apple: "https://music.apple.com/us/album/93punx/1476581045",
+            Spotify: "https://open.spotify.com/album/13VX4SeBbXuZEihnA91GSo",
+            YouTube: "enqtRxHtGG8",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 11,
+        title: "Jessie J - This Christmas Day",
+        description: "Credits: Assistant Engineer",
+        date: "2018-10-26",
+        image: jessie_christmas,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/this-christmas-day/1438807275?ign-gact=3&ls=1",
+            Spotify:
+                "https://open.spotify.com/album/5FVQjSLBVMdWaZYD4vf3gS?autoplay=true",
+            YouTube: "aDKZREQaSA0",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 12,
+        title: "Haley Reinhart - Dreams",
+        description: "Credits: Assistant Engineer",
+        date: "2019-04-08",
+        image: haley_dream,
+        links: {
+            YouTube: "NrWyLIlNrGE",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 13,
+        title: "REYNA - The Way I Loved You",
+        description: "Credits: Assistant Engineer",
+        date: "2019-06-21",
+        image: reyna_way,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/the-way-i-loved-you-single/1466331959",
+            Spotify: "https://open.spotify.com/album/2djMHYUGjj4bi7li2U7gwz",
+            YouTube: "6W9dT27X4sU",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 14,
+        title: "Sky Ferreira - Downhill Lullaby",
+        description: "Credits: Assistant Engineer",
+        date: "2019-03-27",
+        image: sky_downhill,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/1457079053?ign-itscg=30440&ign-itsct=catchall_p1",
+            Spotify: "https://open.spotify.com/track/5pTpFp9wr8X7uddedE7uJS",
+            YouTube: "n8x55qS3chA",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 15,
+        title: "Frank Ocean - Provider",
+        description: "Credits: Assistant Engineer",
+        date: "2017-08-28",
+        image: frank_provider,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/provider-single/1276055312?i=1276055314&ign-gact=3&ls=1",
+            Spotify: "https://open.spotify.com/album/7uSaHPXSYaRB3FxLOmatG9",
+            YouTube: "XKQNJzquduI",
+        },
+        type: "MUSIC",
+    },
+];

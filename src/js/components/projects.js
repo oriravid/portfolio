@@ -1,16 +1,15 @@
 //ext
 import React, { useState } from "react";
 //int - util
+import * as PD from "./project_data";
 import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
-//int - images
-import appo_music from "../../imgs/appo_music.png";
-import devhub from "../../imgs/devhub.png";
-import fletcher_silent from "../../imgs/fletcher_silent.jpg";
-import lyrassist from "../../imgs/lyrassist.png";
 
-const Projects = () => {
+const Projects = ({ scrollAmt }) => {
     const [selectedType, setType] = useState("ALL");
+    const [projects, setProjects] = useState(
+        PD.projects.sort(HELPERS.dateSorter)
+    );
     const [selectedProject, setProject] = useState(null);
 
     return (
@@ -18,9 +17,9 @@ const Projects = () => {
             <div className="section" id="projects">
                 <div className="section-inner">
                     <div className="section-header">
-                        <h2 className="section-title">Projects</h2>
+                        <h2 className="section-title">Project Selection</h2>
                         <ul id="project-type-list">
-                            {types.map((type) => (
+                            {PD.types.map((type) => (
                                 <li
                                     className={`project-type-list-item pointer
                                     ${selectedType === type ? " active" : ""}`}
@@ -45,7 +44,7 @@ const Projects = () => {
                             .map((project, idx) => (
                                 <div
                                     key={
-                                        types.indexOf(selectedType) *
+                                        PD.types.indexOf(selectedType) *
                                             projects.length +
                                         idx
                                     }
@@ -78,96 +77,82 @@ const Projects = () => {
                             ))}
                     </div>
                 </div>
-                {selectedProject ? (
-                    <div
-                        id="project-detail-container"
-                        onClick={(e) => {
-                            if (e.target === e.currentTarget) setProject(null);
-                        }}
-                    >
-                        <div className="section-inner">
-                            {ICONS.close("detail-close pointer", () =>
-                                setProject(null)
-                            )}
-                            <div className="project-content">
-                                <h3>{selectedProject.title}</h3>
-                                <span>
-                                    {HELPERS.dateFormatter(
-                                        selectedProject.date
-                                    )}
-                                </span>
+            </div>
+
+            {selectedProject ? (
+                <div
+                    id="project-detail-container"
+                    style={{ top: `${scrollAmt}` }}
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) setProject(null);
+                    }}
+                >
+                    <div className="section-inner">
+                        {ICONS.close("detail-close pointer", () =>
+                            setProject(null)
+                        )}
+                        <div id="project-detail-inner">
+                            <h2 id="project-detail-title">
+                                {selectedProject.title}
+                            </h2>
+                            <span id="project-detail-date">
+                                {HELPERS.dateFormatter(selectedProject.date)}
+                            </span>
+                            {selectedProject.links.YouTube ? (
+                                <div id="project-detail-video">
+                                    <iframe
+                                        title="YouTube Video"
+                                        width="560"
+                                        height="315"
+                                        src={`https://www.youtube-nocookie.com/embed/${selectedProject.links.YouTube}`}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+                            ) : (
                                 <img
+                                    id="project-detail-image"
                                     src={selectedProject?.image}
                                     alt={selectedProject?.name}
                                 />
-                                <p>{selectedProject.description}</p>
-                                {Object.keys(selectedProject.links).map(
-                                    (linkText) => (
-                                        <a
-                                            key={linkText}
-                                            href={
-                                                selectedProject.links[linkText]
-                                            }
-                                            target="_blank"
-                                        >
-                                            <div className="button primary">
-                                                {linkText}
-                                            </div>
-                                        </a>
-                                    )
-                                )}
+                            )}
+                            <div id="project-detail-content">
+                                <p id="project-detail-text">
+                                    {selectedProject.description}
+                                </p>
+                                <ul id="project-detail-links">
+                                    {Object.keys(selectedProject.links).map(
+                                        (linkText) => {
+                                            if (linkText === "YouTube") return;
+
+                                            return (
+                                                <li className="project-detail-link-item">
+                                                    <a
+                                                        key={linkText}
+                                                        href={
+                                                            selectedProject
+                                                                .links[linkText]
+                                                        }
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
+                                                        {linkText}
+                                                    </a>
+                                                </li>
+                                            );
+                                        }
+                                    )}
+                                </ul>
                             </div>
                         </div>
                     </div>
-                ) : (
-                    ""
-                )}
-            </div>
+                </div>
+            ) : (
+                ""
+            )}
         </React.Fragment>
     );
 };
 
 export default Projects;
-
-const types = ["ALL", "MUSIC", "CODE"];
-
-const projects = [
-    {
-        title: "Appo Music",
-        description:
-            "Appo Music is a full-stack clone of the incredible Apple Music online streaming platform, with an aim to re-create it's core features, seamless design, and excellent user experience.",
-        date: "2021-01-01",
-        image: appo_music,
-        links: { view: "https://appo-music.herokuapp.com/" },
-        type: "CODE",
-    },
-    {
-        title: "Fletcher – Silent Night",
-        description: "bunch of random text",
-        date: "2020-12-01",
-        image: fletcher_silent,
-        links: {
-            listen:
-                "https://music.apple.com/us/album/silent-night-single/1541041366",
-        },
-        type: "MUSIC",
-    },
-    {
-        title: "LYRASSIST",
-        description:
-            "LYRASSIST is a word recommendation tool and visualizer for writers. Built strictly with JavaScript/JQuery, HTML and CSS to showcase front-end animation/transitions.",
-        date: "2020-11-30",
-        image: lyrassist,
-        links: { view: "https://oriravid.github.io/LYRASSIST/" },
-        type: "CODE",
-    },
-    {
-        title: "devHub",
-        description:
-            "devHUB is a platform that empowers developers to showcase themselves and their work, connect with other developers, and access job opportunities. General professionals have Linkedin, designers have Dribble, and now developers have devHUB.",
-        date: "2020-11-25",
-        image: devhub,
-        links: { view: "https://getdevhub.herokuapp.com/#/" },
-        type: "CODE",
-    },
-];
