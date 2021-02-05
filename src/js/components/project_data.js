@@ -17,6 +17,9 @@ import frank_provider from "../../imgs/frank_provider.jpg";
 import pria_foolish from "../../imgs/pria_foolish.jpg";
 import loko_loko from "../../imgs/loko_loko.jpg";
 import first_man from "../../imgs/first_man.jpg";
+import eylon_shiri from "../../imgs/eylon_shiri.png";
+import eylon_time from "../../imgs/eylon_time.png";
+import tanooki_wow from "../../imgs/tanooki_wow.jpg";
 
 export const types = ["ALL", "MUSIC", "CODE"];
 
@@ -34,6 +37,21 @@ export const projects = [
     },
     {
         id: 2,
+        title: "First Man",
+        subtitle: "Original Motion Picture Soundtrack",
+        description: "Credits: Asst. Engineer",
+        date: "2018-10-12",
+        image: first_man,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/first-man-original-motion-picture-soundtrack/1437211399",
+            Spotify: "https://open.spotify.com/album/4NFpOHIv0hJa9of0IQsgKw",
+            YouTube: "KqpMAYaKLgI",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 3,
         title: "LYRASSIST",
         subtitle: "JavaScript, jQuery",
         description:
@@ -44,95 +62,10 @@ export const projects = [
         type: "CODE",
     },
     {
-        id: 3,
-        title: "devHub",
-        subtitle: "React, Express, Node, MongoDB",
-        description:
-            "devHUB is a platform that empowers developers to showcase themselves and their work, connect with other developers, and access job opportunities. General professionals have Linkedin, designers have Dribble, and now developers have devHUB.",
-        date: "2020-11-25",
-        image: devhub,
-        links: { view: "https://getdevhub.herokuapp.com/#/" },
-        type: "CODE",
-    },
-    {
         id: 4,
-        title: "Silent Night",
-        subtitle: "FLETCHER",
-        description: "Credits: Assistant Engineer",
-        date: "2020-12-01",
-        image: fletcher_silent,
-        links: {
-            Apple:
-                "https://music.apple.com/us/album/silent-night-single/1541041366",
-        },
-        type: "MUSIC",
-    },
-    {
-        id: 5,
-        title: "Love Gone Wrong",
-        subtitle: "Wild Rivers",
-        description: "Credits: Assistant Engineer",
-        date: "2021-01-28",
-        image: wild_love,
-        links: {
-            Apple:
-                "https://music.apple.com/us/album/love-gone-wrong-single/1548050610?at=11l69&ct=FFM_b96c67b884e4d22bc887e7bb8d0e9650&uo=4&app=music",
-            Spotify: "https://open.spotify.com/album/2y0LnZGWcOLaHhzLpSMjHR",
-            YouTube: "w2MmlRb0lNA",
-        },
-        type: "MUSIC",
-    },
-    {
-        id: 6,
-        title: "The Alter",
-        subtitle: "Zosia",
-        description: "Credits: Assistant Engineer",
-        date: "2021-02-04",
-        image: zosia_alter,
-        links: {
-            Apple: "https://music.apple.com/us/album/7-suns-single/1538318654",
-            Spotify:
-                "https://open.spotify.com/album/2itxaK9bdTAfQlxUcw10nB?si=15rypYVHRpGLZoCrbOrv_A&nd=1",
-            YouTube: "-DLlwdJnkfE",
-        },
-        type: "MUSIC",
-    },
-    {
-        id: 7,
-        title: "7 Suns",
-        subtitle: "Zosia",
-        description: "Credits: Assistant Engineer",
-        date: "2020-11-19",
-        image: zosia_suns,
-        links: {
-            Apple: "https://music.apple.com/us/album/7-suns-single/1538318654",
-            Spotify:
-                "https://open.spotify.com/album/6aQ4SFj2K6ESZ27bQRCJBq?si=zzPS1HM_SJ-s0YE3aWyg4g&nd=1",
-            YouTube: "pp-o6SV-hOw",
-        },
-        type: "MUSIC",
-    },
-    {
-        id: 8,
-        title: "Fix You",
-        subtitle: "Caitlyn Smith",
-        description: "Credits: Assistant Engineer",
-        date: "2020-09-25",
-        image: caitlyn_fix,
-        links: {
-            Apple:
-                "https://music.apple.com/us/album/supernova-deluxe/1531535233",
-            Spotify:
-                "https://open.spotify.com/album/7EVVjcblXEwmzOUFSIdExn?si=JxN3K9g-SyyQzOo2vB_Pvw&nd=1",
-            YouTube: "eUuInNTFFtY",
-        },
-        type: "MUSIC",
-    },
-    {
-        id: 9,
         title: "Forever (Stripped)",
         subtitle: "FLETCHER",
-        description: "Credits: Assistant Engineer",
+        description: "Credits: Asst. Engineer",
         date: "2020-05-07",
         image: fletcher_forever,
         links: {
@@ -144,7 +77,18 @@ export const projects = [
         type: "MUSIC",
     },
     {
-        id: 10,
+        id: 5,
+        title: "devHub",
+        subtitle: "React, Express, Node, MongoDB",
+        description:
+            "devHUB is a platform that empowers developers to showcase themselves and their work, connect with other developers, and access job opportunities. General professionals have Linkedin, designers have Dribble, and now developers have devHUB.",
+        date: "2020-11-25",
+        image: devhub,
+        links: { view: "https://getdevhub.herokuapp.com/#/" },
+        type: "CODE",
+    },
+    {
+        id: 6,
         title: "93 Punx",
         subtitle: "93 Punx",
         description:
@@ -158,11 +102,12 @@ export const projects = [
         },
         type: "MUSIC",
     },
+
     {
-        id: 11,
+        id: 7,
         title: "This Christmas Day",
         subtitle: "Jessie J",
-        description: "Credits: Assistant Engineer",
+        description: "Credits: Asst. Engineer",
         date: "2018-10-26",
         image: jessie_christmas,
         links: {
@@ -174,11 +119,12 @@ export const projects = [
         },
         type: "MUSIC",
     },
+
     {
-        id: 12,
+        id: 8,
         title: "Dreams",
         subtitle: "Haley Reinhart",
-        description: "Credits: Assistant Engineer",
+        description: "Credits: Asst. Engineer",
         date: "2019-04-08",
         image: haley_dream,
         links: {
@@ -186,11 +132,28 @@ export const projects = [
         },
         type: "MUSIC",
     },
+
     {
-        id: 13,
+        id: 9,
+        title: "Provider",
+        subtitle: "Frank Ocean",
+        description: "Credits: Asst. Engineer",
+        date: "2017-08-28",
+        image: frank_provider,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/provider-single/1276055312?i=1276055314&ign-gact=3&ls=1",
+            Spotify: "https://open.spotify.com/album/7uSaHPXSYaRB3FxLOmatG9",
+            YouTube: "XKQNJzquduI",
+        },
+        type: "MUSIC",
+    },
+
+    {
+        id: 10,
         title: "The Way I Loved You",
         subtitle: "REYNA",
-        description: "Credits: Assistant Engineer",
+        description: "Credits: Asst. Engineer",
         date: "2019-06-21",
         image: reyna_way,
         links: {
@@ -202,10 +165,10 @@ export const projects = [
         type: "MUSIC",
     },
     {
-        id: 14,
+        id: 11,
         title: "Downhill Lullaby",
         subtitle: "Sky Ferreira",
-        description: "Credits: Assistant Engineer",
+        description: "Credits: Asst. Engineer",
         date: "2019-03-27",
         image: sky_downhill,
         links: {
@@ -216,38 +179,22 @@ export const projects = [
         },
         type: "MUSIC",
     },
+
     {
-        id: 15,
-        title: "Provider",
-        subtitle: "Frank Ocean",
-        description: "Credits: Assistant Engineer",
-        date: "2017-08-28",
-        image: frank_provider,
+        id: 12,
+        title: "Silent Night",
+        subtitle: "FLETCHER",
+        description: "Credits: Asst. Engineer",
+        date: "2020-12-01",
+        image: fletcher_silent,
         links: {
             Apple:
-                "https://music.apple.com/us/album/provider-single/1276055312?i=1276055314&ign-gact=3&ls=1",
-            Spotify: "https://open.spotify.com/album/7uSaHPXSYaRB3FxLOmatG9",
-            YouTube: "XKQNJzquduI",
+                "https://music.apple.com/us/album/silent-night-single/1541041366",
         },
         type: "MUSIC",
     },
     {
-        id: 16,
-        title: "Foolish",
-        subtitle: "Pria Cotterell",
-        description:
-            "Credits: Recording Engineer, Mix Engineer, Add'l Production",
-        date: "2019-04-07",
-        image: pria_foolish,
-        links: {
-            Apple: "https://music.apple.com/us/album/foolish-single/1459294329",
-            Spotify: "https://open.spotify.com/album/1fKb9VHVdBKIWbi0nx3zZW",
-            YouTube: "cWoZAB44BiU",
-        },
-        type: "MUSIC",
-    },
-    {
-        id: 17,
+        id: 13,
         title: "Loko Wit Tha Mask EP",
         subtitle: "Loko Wit Tha Mask",
         description:
@@ -263,17 +210,114 @@ export const projects = [
         type: "MUSIC",
     },
     {
-        id: 18,
-        title: "Original Motion Picture Soundtrack",
-        subtitle: "First Man",
-        description: "Credits: Assistant Engineer",
-        date: "2018-10-12",
-        image: first_man,
+        id: 14,
+        title: "Love Gone Wrong",
+        subtitle: "Wild Rivers",
+        description: "Credits: Asst. Engineer",
+        date: "2021-01-28",
+        image: wild_love,
         links: {
             Apple:
-                "https://music.apple.com/us/album/first-man-original-motion-picture-soundtrack/1437211399",
-            Spotify: "https://open.spotify.com/album/4NFpOHIv0hJa9of0IQsgKw",
-            YouTube: "KqpMAYaKLgI",
+                "https://music.apple.com/us/album/love-gone-wrong-single/1548050610?at=11l69&ct=FFM_b96c67b884e4d22bc887e7bb8d0e9650&uo=4&app=music",
+            Spotify: "https://open.spotify.com/album/2y0LnZGWcOLaHhzLpSMjHR",
+            YouTube: "w2MmlRb0lNA",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 15,
+        title: "Shiri Li",
+        subtitle: "Eylon Carny",
+        description: "Credits: Editing, Mix Engineer",
+        date: "2015-08-18",
+        image: eylon_shiri,
+        links: {
+            YouTube: "S6w9gANo-6s",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 16,
+        title: "The Alter",
+        subtitle: "Zosia",
+        description: "Credits: Asst. Engineer",
+        date: "2021-02-04",
+        image: zosia_alter,
+        links: {
+            Apple: "https://music.apple.com/us/album/7-suns-single/1538318654",
+            Spotify:
+                "https://open.spotify.com/album/2itxaK9bdTAfQlxUcw10nB?si=15rypYVHRpGLZoCrbOrv_A&nd=1",
+            YouTube: "-DLlwdJnkfE",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 17,
+        title: "Foolish",
+        subtitle: "Pria Cotterell",
+        description:
+            "Credits: Recording Engineer, Mix Engineer, Add'l Production",
+        date: "2019-04-07",
+        image: pria_foolish,
+        links: {
+            Apple: "https://music.apple.com/us/album/foolish-single/1459294329",
+            Spotify: "https://open.spotify.com/album/1fKb9VHVdBKIWbi0nx3zZW",
+            YouTube: "cWoZAB44BiU",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 18,
+        title: "7 Suns",
+        subtitle: "Zosia",
+        description: "Credits: Asst. Engineer",
+        date: "2020-11-19",
+        image: zosia_suns,
+        links: {
+            Apple: "https://music.apple.com/us/album/7-suns-single/1538318654",
+            Spotify:
+                "https://open.spotify.com/album/6aQ4SFj2K6ESZ27bQRCJBq?si=zzPS1HM_SJ-s0YE3aWyg4g&nd=1",
+            YouTube: "pp-o6SV-hOw",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 19,
+        title: "Fix You",
+        subtitle: "Caitlyn Smith",
+        description: "Credits: Asst. Engineer",
+        date: "2020-09-25",
+        image: caitlyn_fix,
+        links: {
+            Apple:
+                "https://music.apple.com/us/album/supernova-deluxe/1531535233",
+            Spotify:
+                "https://open.spotify.com/album/7EVVjcblXEwmzOUFSIdExn?si=JxN3K9g-SyyQzOo2vB_Pvw&nd=1",
+            YouTube: "eUuInNTFFtY",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 20,
+        title: "Wow",
+        subtitle: "Tanooki James",
+        description: "Credits: Editing, Add'l Production, Mix Engineer",
+        date: "2019-08-29",
+        image: tanooki_wow,
+        links: {
+            YouTube: "jIY3SYAH9zE",
+        },
+        type: "MUSIC",
+    },
+    {
+        id: 21,
+        title: "Time in a Bottle",
+        subtitle: "Eylon Carny",
+        description: "Credits: Editing, Mix Engineer",
+        date: "2018-10-10",
+        image: eylon_time,
+        links: {
+            YouTube: "ypp4bW1V9Bo",
         },
         type: "MUSIC",
     },
