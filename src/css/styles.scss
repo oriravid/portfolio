@@ -355,8 +355,7 @@ h3 {
     #project-list {
         margin: 25px 0;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
         gap: 25px 25px;
         grid-template-areas:
             ". . ."
@@ -411,6 +410,11 @@ h3 {
                             width: 100%;
                             height: 2px;
                             margin: 10px 0;
+                        }
+
+                        h2,
+                        h3 {
+                            display: inline-block;
                         }
 
                         h3 {
@@ -511,7 +515,6 @@ h3 {
         background-color: $color-white;
         border-radius: 7.5px;
         box-shadow: 0px 10px 35px rgba(46, 16, 16, 0.25);
-        text-align: center;
         animation: fade-in 0.2s linear forwards;
 
         .detail-close {
@@ -537,8 +540,10 @@ h3 {
         }
 
         #project-detail-image {
+            object-fit: cover;
+            object-position: top;
             max-height: 400px;
-            max-width: 100%;
+            width: 100%;
             border-radius: 7.5px;
         }
 
@@ -561,7 +566,26 @@ h3 {
         }
 
         #project-detail-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
             #project-detail-text {
+            }
+
+            #project-detail-links {
+                display: flex;
+
+                svg {
+                    width: 50px;
+                    height: 50px;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        opacity: 0.75;
+                        transform: scale(1.1);
+                    }
+                }
             }
         }
     }

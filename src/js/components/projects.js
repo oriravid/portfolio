@@ -1,5 +1,7 @@
 //ext
 import React, { useState, useEffect } from "react";
+//int - components
+import ProjectLinks from "./project_links";
 //int - util
 import * as PD from "./project_data";
 import * as HELPERS from "../utils/helpers";
@@ -187,29 +189,7 @@ const Projects = ({ scrollAmt }) => {
                                 <p id="project-detail-text">
                                     {selectedProject.description}
                                 </p>
-                                <ul id="project-detail-links">
-                                    {Object.keys(selectedProject.links).map(
-                                        (linkText) => {
-                                            if (linkText === "YouTube") return;
-
-                                            return (
-                                                <li className="project-detail-link-item">
-                                                    <a
-                                                        key={linkText}
-                                                        href={
-                                                            selectedProject
-                                                                .links[linkText]
-                                                        }
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                    >
-                                                        {linkText}
-                                                    </a>
-                                                </li>
-                                            );
-                                        }
-                                    )}
-                                </ul>
+                                <ProjectLinks links={selectedProject.links} />
                             </div>
                         </div>
                     </div>
