@@ -204,7 +204,6 @@ h3 {
             font-size: 44px;
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 7.5px;
         }
 
         p {
@@ -215,7 +214,7 @@ h3 {
         .line {
             height: 3px;
             width: 0;
-            margin: 15px 0;
+            margin: 12.5px 0;
             background-color: $color-blue2;
             transition: all 0.75s;
 
@@ -232,14 +231,23 @@ h3 {
             opacity: 0;
             transition: all 0.75s;
 
-            &.active {
-                opacity: 1;
+            li {
+                position: relative;
+
+                a {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $color-black;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        color: rgba(51, 57, 59, 0.85);
+                    }
+                }
             }
 
-            a {
-                font-size: 16px;
-                font-weight: 600;
-                color: $color-black;
+            &.active {
+                opacity: 1;
             }
         }
     }
@@ -316,14 +324,19 @@ h3 {
     box-shadow: 0px 0px 25px rgba(46, 16, 16, 0.6);
 
     .section-inner {
+        display: none;
         height: 100%;
-        display: flex;
         flex-flow: column nowrap;
         overflow: hidden;
+
+        &.active {
+            display: flex;
+        }
 
         .section-header,
         #project-nav {
             flex: none;
+            animation: fade-in 1s ease-out forwards;
         }
 
         #project-list {

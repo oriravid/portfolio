@@ -7,13 +7,18 @@ import * as PD from "./project_data";
 import * as HELPERS from "../utils/helpers";
 import * as ICONS from "../utils/icons";
 
-const Projects = ({ scrollAmt }) => {
+const Projects = ({ inView }) => {
+    const [rendered, setRendered] = useState(inView);
     const [selectedType, setType] = useState("ALL");
     const [projectStartIdx, setProjectStartIdx] = useState(0);
     const [prevInactive, setPrevInactive] = useState(true);
     const [nextInactive, setNextInactive] = useState(true);
     const [projects, setProjects] = useState(PD.projects.slice(0, 6));
     const [selectedProject, setProject] = useState(null);
+
+    useEffect(() => {
+        if (inView === true) setRendered(true);
+    }, [inView]);
 
     useEffect(() => {
         setProjectStartIdx(0);
@@ -74,7 +79,7 @@ const Projects = ({ scrollAmt }) => {
     return (
         <React.Fragment>
             <div className="section" id="projects">
-                <div className="section-inner">
+                <div className={`section-inner${rendered ? " active" : ""}`}>
                     <div className="section-header">
                         <h2 className="section-title">Projects</h2>
                         <ul id="project-type-list">
@@ -144,7 +149,6 @@ const Projects = ({ scrollAmt }) => {
                 {selectedProject ? (
                     <div
                         id="project-detail-container"
-                        style={{ top: `${scrollAmt}` }}
                         onClick={(e) => {
                             if (e.target === e.currentTarget) setProject(null);
                         }}
