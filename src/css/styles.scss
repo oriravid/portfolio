@@ -691,12 +691,18 @@ h3 {
 
 @keyframes slice-in {
     from {
-        -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
     }
     to {
-        -webkit-transform: translateY(0);
         transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -o-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
     }
 }
 
@@ -713,10 +719,18 @@ h3 {
     from {
         opacity: 0;
         transform: translateY(25px);
+        -webkit-transform: translateY(25px);
+        -o-transform: translateY(25px);
+        -moz-transform: translateY(25px);
+        -ms-transform: translateY(25px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -o-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
     }
 }
 
