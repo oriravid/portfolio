@@ -1,7 +1,7 @@
 //int - images
-import appo_music from "../../imgs/appo_music.png";
-import devhub from "../../imgs/devhub.png";
-import lyrassist from "../../imgs/lyrassist.png";
+import appo_music from "../../imgs/appo_music.jpg";
+import devhub from "../../imgs/devhub.jpg";
+import lyrassist from "../../imgs/lyrassist.jpg";
 import fletcher_silent from "../../imgs/fletcher_silent.jpg";
 import wild_love from "../../imgs/wild_love.jpg";
 import zosia_alter from "../../imgs/zosia_alter.jpeg";

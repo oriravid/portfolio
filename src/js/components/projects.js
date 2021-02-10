@@ -149,7 +149,12 @@ const Projects = ({ scrollAmt }) => {
                             if (e.target === e.currentTarget) setProject(null);
                         }}
                     >
-                        <div id="project-detail-inner">
+                        <div
+                            id="project-detail-inner"
+                            className={`${
+                                selectedProject.links.YouTube ? "video" : ""
+                            }`}
+                        >
                             {ICONS.close("detail-close pointer", () =>
                                 setProject(null)
                             )}

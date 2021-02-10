@@ -511,6 +511,9 @@ h3 {
     #project-detail-inner {
         position: relative;
         width: 65%;
+        max-width: 1000px;
+        max-height: 80%;
+        overflow-y: scroll;
         padding: 25px 50px;
         background-color: $color-white;
         border-radius: 7.5px;
@@ -540,9 +543,6 @@ h3 {
         }
 
         #project-detail-image {
-            object-fit: cover;
-            object-position: top;
-            max-height: 400px;
             width: 100%;
             border-radius: 7.5px;
         }
@@ -596,14 +596,9 @@ h3 {
 
 #about {
     position: relative;
-    background: rgb(51, 57, 59);
-    background: linear-gradient(
-        90deg,
-        rgba(51, 57, 59, 1) 0%,
-        rgba(63, 70, 73, 1) 100%
-    );
-
-    color: $color-white;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
@@ -616,11 +611,11 @@ h3 {
         }
 
         h3 {
-            font-size: 28px;
+            font-size: 24px;
         }
 
         .about-text {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 500;
             letter-spacing: 0.1rem;
         }
@@ -631,8 +626,8 @@ h3 {
 
         #about-banner-inner {
             padding: 40px;
-            background-color: $color-white;
-            color: $color-black;
+            background-color: $color-black;
+            color: $color-white;
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
@@ -650,9 +645,27 @@ h3 {
 
                 li {
                     margin-right: 15px;
+                    position: relative;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: -3px;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: $color-blue4;
+                        transition: all 0.2s;
+                    }
+
+                    &:hover:not(:nth-child(even)) {
+                        &:after {
+                            width: 100%;
+                        }
+                    }
 
                     a {
-                        color: $color-black;
+                        color: $color-white;
                     }
                 }
             }

@@ -1,5 +1,7 @@
 //ext
 import React from "react";
+//int - images
+import about_bg from "../../imgs/about.jpg";
 
 const About = ({ scrollAmt }) => {
     // var scrollPct =
@@ -9,9 +11,13 @@ const About = ({ scrollAmt }) => {
     // console.log(scrollPct);
 
     return (
-        <div className="section" id="about">
+        <div
+            className="section"
+            id="about"
+            style={{ backgroundImage: `url(${about_bg})` }}
+        >
             <div className="section-inner">
-                <h3>Hello, I’m Ori!</h3>
+                <h3>Hello, I’m Ori</h3>
                 <p className="about-text">
                     I’m a software engineer with an extensive audio engineering
                     background.
