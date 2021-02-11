@@ -17,8 +17,8 @@ $box-shadow-4: 0px 0px 20px rgba(46, 16, 16, 0.5);
 $gray-text-1: rgba(60, 60, 67, 0.4);
 $gray-text-2: rgba(60, 60, 67, 0.6);
 
-$tablet: 1200px;
-$mobile: 840px;
+$tablet: 1000px;
+$mobile: 700px;
 
 // GENERAL
 ////////////////////////////////////////////////////////////////////////////////
@@ -190,6 +190,11 @@ h3 {
         justify-content: center;
         opacity: 1;
 
+        @media only screen and (max-width: $mobile) {
+            max-width: 90%;
+            padding: 30px 35px;
+        }
+
         &.animated {
             animation: fade-up 0.75s ease-out 1.5s both;
         }
@@ -249,13 +254,6 @@ h3 {
             &.active {
                 opacity: 1;
             }
-        }
-    }
-
-    @media only screen and (max-width: $mobile) {
-        .section-inner {
-            max-width: 90%;
-            padding: 30px 35px;
         }
     }
 
@@ -338,11 +336,6 @@ h3 {
             flex: none;
             animation: fade-in 1s ease-out forwards;
         }
-
-        #project-list {
-            height: 1px;
-            flex: auto;
-        }
     }
 
     #project-type-list {
@@ -366,6 +359,8 @@ h3 {
     }
 
     #project-list {
+        height: 1px;
+        flex: auto;
         margin: 25px 0;
         display: grid;
         grid-template: repeat(2, 1fr) / repeat(3, 1fr);
@@ -373,6 +368,22 @@ h3 {
         grid-template-areas:
             ". . ."
             ". . .";
+
+        @media only screen and (max-width: $tablet) {
+            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+            grid-template-areas:
+                ". ."
+                ". .";
+        }
+
+        @media only screen and (max-width: $mobile) {
+            grid-template: initial;
+            grid-auto-rows: 1fr;
+            grid-auto-columns: 1fr;
+            grid-template-areas:
+                "."
+                ".";
+        }
 
         .project-list-item {
             will-change: auto;
@@ -475,6 +486,21 @@ h3 {
                 .project-overlay-inner {
                     transform: translateY(0);
                 }
+            }
+        }
+    }
+
+    #project-slider {
+        height: 1px;
+        flex: auto;
+        padding: 7.5px 0;
+
+        #project-slider-inner {
+            height: 100%;
+            overflow-y: scroll;
+
+            img {
+                width: 100%;
             }
         }
     }
@@ -741,5 +767,14 @@ h3 {
     }
     to {
         width: 100%;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        top: 800px;
+    }
+    100% {
+        top: -800px;
     }
 }

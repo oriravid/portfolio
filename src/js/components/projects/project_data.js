@@ -1,25 +1,25 @@
 //int - images
-import appo_music from "../../imgs/appo_music.jpg";
-import devhub from "../../imgs/devhub.jpg";
-import lyrassist from "../../imgs/lyrassist.jpg";
-import fletcher_silent from "../../imgs/fletcher_silent.jpg";
-import wild_love from "../../imgs/wild_love.jpg";
-import zosia_alter from "../../imgs/zosia_alter.jpeg";
-import zosia_suns from "../../imgs/zosia_suns.jpg";
-import caitlyn_fix from "../../imgs/caitlyn_fix.jpg";
-import fletcher_forever from "../../imgs/fletcher_forever.jpg";
-import ninetythree_punx from "../../imgs/ninetythree_punx.jpg";
-import jessie_christmas from "../../imgs/jessie_christmas.jpg";
-import haley_dream from "../../imgs/haley_dream.png";
-import reyna_way from "../../imgs/reyna_way.jpg";
-import sky_downhill from "../../imgs/sky_downhill.jpg";
-import frank_provider from "../../imgs/frank_provider.jpg";
-import pria_foolish from "../../imgs/pria_foolish.jpg";
-import loko_loko from "../../imgs/loko_loko.jpg";
-import first_man from "../../imgs/first_man.jpg";
-import eylon_shiri from "../../imgs/eylon_shiri.png";
-import eylon_time from "../../imgs/eylon_time.png";
-import tanooki_wow from "../../imgs/tanooki_wow.jpg";
+import appo_music from "../../../imgs/appo_music.jpg";
+import devhub from "../../../imgs/devhub.jpg";
+import lyrassist from "../../../imgs/lyrassist.jpg";
+import fletcher_silent from "../../../imgs/fletcher_silent.jpg";
+import wild_love from "../../../imgs/wild_love.jpg";
+import zosia_alter from "../../../imgs/zosia_alter.jpeg";
+import zosia_suns from "../../../imgs/zosia_suns.jpg";
+import caitlyn_fix from "../../../imgs/caitlyn_fix.jpg";
+import fletcher_forever from "../../../imgs/fletcher_forever.jpg";
+import ninetythree_punx from "../../../imgs/ninetythree_punx.jpg";
+import jessie_christmas from "../../../imgs/jessie_christmas.jpg";
+import haley_dream from "../../../imgs/haley_dream.png";
+import reyna_way from "../../../imgs/reyna_way.jpg";
+import sky_downhill from "../../../imgs/sky_downhill.jpg";
+import frank_provider from "../../../imgs/frank_provider.jpg";
+import pria_foolish from "../../../imgs/pria_foolish.jpg";
+import loko_loko from "../../../imgs/loko_loko.jpg";
+import first_man from "../../../imgs/first_man.jpg";
+import eylon_shiri from "../../../imgs/eylon_shiri.png";
+import eylon_time from "../../../imgs/eylon_time.png";
+import tanooki_wow from "../../../imgs/tanooki_wow.jpg";
 
 export const types = ["ALL", "MUSIC", "CODE"];
 

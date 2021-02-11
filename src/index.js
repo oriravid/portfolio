@@ -9,7 +9,7 @@ import "./css/styles.scss";
 //int - components
 // import Nav from "./js/components/nav";
 import Home from "./js/components/home";
-import Projects from "./js/components/projects";
+import Projects from "./js/components/projects/projects";
 import About from "./js/components/about";
 
 //Google Analytics

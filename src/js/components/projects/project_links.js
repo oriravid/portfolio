@@ -1,5 +1,5 @@
 //int - util
-import * as ICONS from "../utils/icons";
+import * as ICONS from "../../utils/icons";
 
 const ProjectLinks = ({ links }) => {
     const linkLogo = (link) => {
