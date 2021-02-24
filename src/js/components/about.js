@@ -19,7 +19,7 @@ const About = ({ scrollAmt }) => {
             <div className="section-inner">
                 <h3>Hello, I’m Ori</h3>
                 <p className="about-text">
-                    I’m a software engineer with an extensive audio engineering
+                    I’m a software engineer with an audio engineering
                     background.
                 </p>
                 <p className="about-text">
