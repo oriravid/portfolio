@@ -78,7 +78,7 @@ const Home = ({ scrollAmt }) => {
                         </a>
                     </li>
                 </ul>
-                <div className="coming-soon">Coming Soon!</div>
+                {/* <div className="coming-soon">Coming Soon!</div> */}
             </div>
             {/* <a href="#projects">
                 {ICONS.arrowDown(
