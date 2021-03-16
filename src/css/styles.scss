@@ -419,7 +419,7 @@ h3 {
                 }
             }
 
-            @media only screen and (min-height: $tablet) {
+            @media only screen and (min-width: $mobile) {
                 &:hover {
                     .project-overlay {
                         opacity: 1;
