@@ -4,17 +4,21 @@ import React, { useState, useEffect } from "react";
 import ProjectDisplay from "./project_display";
 import ProjectLinks from "./project_links";
 //int - util
-import * as PD from "./project_data";
 import * as HELPERS from "../../utils/helpers";
 import * as ICONS from "../../utils/icons";
 
-const Projects = () => {
+const Projects = ({ inView }) => {
+    const [rendered, setRendered] = useState(inView);
     const [selectedProject, setProject] = useState(null);
+
+    useEffect(() => {
+        if (inView === true) setRendered(true);
+    }, [inView]);
 
     return (
         <React.Fragment>
             <div className="section" id="projects">
-                <ProjectDisplay setProject={setProject} />
+                <ProjectDisplay rendered={rendered} setProject={setProject} />
                 {selectedProject ? (
                     <div
                         id="project-detail-container"

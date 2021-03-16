@@ -31,16 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const Root = () => {
         const [scrollAmt, setScrollAmt] = useState(0);
+        const [currentSection, setCurrentSection] = useState(0);
 
         root.addEventListener("scroll", (e) => {
             setScrollAmt(e.target.scrollTop);
+
+            var section = Math.floor(e.target.scrollTop / window.innerHeight);
+            if (currentSection !== section) setCurrentSection(section);
         });
 
         return (
             // <HttpsRedirect>
             <React.Fragment>
                 <Home scrollAmt={scrollAmt} />
-                <Projects />
+                <Projects inView={currentSection === 1} />
                 {/* <About /> */}
             </React.Fragment>
             // </HttpsRedirect>

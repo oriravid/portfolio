@@ -22,11 +22,6 @@ $mobile: 700px;
 
 // GENERAL
 ////////////////////////////////////////////////////////////////////////////////
-// html,
-// body {
-//     height: 100%;
-// }
-
 html,
 input {
     font-family: "Poppins", sans-serif;
@@ -114,77 +109,11 @@ h3 {
     }
 }
 
-// NAV
-////////////////////////////////////////////////////////////////////////////////
-
-#nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-
-    &.active {
-        opacity: 1;
-
-        #nav-list {
-            pointer-events: auto;
-        }
-    }
-
-    #nav-list {
-        margin: 15px;
-        padding: 15px;
-        background-color: $color-black;
-        display: flex;
-        border-radius: 7.5px;
-        box-shadow: $box-shadow-2;
-        transition: all 0.4s;
-
-        .nav-list-item {
-            margin: 0 12.5px;
-
-            a {
-                text-transform: uppercase;
-                font-size: 16px;
-                font-weight: 600;
-                color: $color-white;
-
-                &.active {
-                    font-weight: 800;
-                    border-bottom: 3px solid $color-blue4;
-                }
-            }
-        }
-    }
-
-    &.light {
-        #nav-list {
-            background-color: $color-white;
-
-            a {
-                color: $color-black;
-
-                &.active {
-                    border-bottom: 3px solid $color-blue1;
-                }
-            }
-        }
-    }
-}
-
 // HOME
 ////////////////////////////////////////////////////////////////////////////////
 
 #home {
     padding: 0;
-    background-color: $color-black;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -333,9 +262,13 @@ h3 {
 
     .section-inner {
         height: 100%;
-        display: flex;
+        display: none;
         flex-flow: column wrap;
         justify-content: space-between;
+
+        &.active {
+            display: flex;
+        }
 
         .section-header,
         #project-nav {

@@ -1,5 +1,5 @@
 //ext
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 //int - util
 import * as PD from "./project_data";
 import * as HELPERS from "../../utils/helpers";
@@ -20,10 +20,6 @@ const ProjectDisplay = ({ rendered, setProject }) => {
         } else if (window.innerWidth > 350) {
             cols = 2;
         }
-
-        // if (window.innerWidth > 700) {
-        //     return 6;
-        // }
 
         return rows * cols;
     };
@@ -55,7 +51,7 @@ const ProjectDisplay = ({ rendered, setProject }) => {
         setNextInactive(
             projectStartIdx + numProjects >= filterProjects().length
         );
-    }, [projectStartIdx]);
+    }, [projectStartIdx, numProjects]);
 
     const renderPrev = () => {
         return (
