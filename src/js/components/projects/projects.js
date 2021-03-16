@@ -2,35 +2,19 @@
 import React, { useState, useEffect } from "react";
 //int - components
 import ProjectDisplay from "./project_display";
-import ProjectDisplayMobile from "./project_display_mobile";
 import ProjectLinks from "./project_links";
 //int - util
 import * as PD from "./project_data";
 import * as HELPERS from "../../utils/helpers";
 import * as ICONS from "../../utils/icons";
 
-const Projects = ({ inView }) => {
-    const [rendered, setRendered] = useState(inView);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+const Projects = () => {
     const [selectedProject, setProject] = useState(null);
-
-    window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
-
-    useEffect(() => {
-        if (inView === true) setRendered(true);
-    }, [inView]);
 
     return (
         <React.Fragment>
             <div className="section" id="projects">
-                {windowWidth > 700 ? (
-                    <ProjectDisplay
-                        rendered={rendered}
-                        setProject={setProject}
-                    />
-                ) : (
-                    <ProjectDisplayMobile rendered={rendered} />
-                )}
+                <ProjectDisplay setProject={setProject} />
                 {selectedProject ? (
                     <div
                         id="project-detail-container"

@@ -1,7 +1,7 @@
 //ext
 import React from "react";
 //int - images
-import about_bg from "../../imgs/about.jpg";
+import about_bg from "../../imgs/about3.png";
 
 const About = ({ scrollAmt }) => {
     // var scrollPct =
@@ -39,45 +39,45 @@ const About = ({ scrollAmt }) => {
                     take part in media related projects that strive for
                     excellence in design, UX/UI, and functionality.
                 </p>
-            </div>
-            <div id="about-banner">
-                <div id="about-banner-inner">
-                    <h1>Let's make something beautiful together.</h1>
-                    <ul id="about-links">
-                        <li>
-                            <a href="mailto:ori@oriravid.com">EMail</a>
-                        </li>
-                        <li>•</li>
-                        <li>
-                            <a
-                                href="https://www.linkedin.com/in/oriravid/"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                LinkedIn
-                            </a>
-                        </li>
-                        <li>•</li>
-                        <li>
-                            <a
-                                href="https://github.com/oriravid"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                GitHub
-                            </a>
-                        </li>
-                        <li>•</li>
-                        <li>
-                            <a
-                                href="https://www.instagram.com/oriravid/"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Instagram
-                            </a>
-                        </li>
-                    </ul>
+                <div id="about-banner">
+                    <div id="about-banner-inner">
+                        <h1>Let's make something beautiful together.</h1>
+                        <ul id="about-links">
+                            <li>
+                                <a href="mailto:ori@oriravid.com">EMail</a>
+                            </li>
+                            <li>•</li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/oriravid/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    LinkedIn
+                                </a>
+                            </li>
+                            <li>•</li>
+                            <li>
+                                <a
+                                    href="https://github.com/oriravid"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    GitHub
+                                </a>
+                            </li>
+                            <li>•</li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/oriravid/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

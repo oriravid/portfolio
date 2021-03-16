@@ -1,17 +1,37 @@
 //ext
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 //int - util
 import * as PD from "./project_data";
 import * as HELPERS from "../../utils/helpers";
 
 const ProjectDisplay = ({ rendered, setProject }) => {
     const calcNumProjects = () => {
-        if (window.innerWidth < 700) {
-            return 2;
-        } else if (window.innerWidth < 1000) {
-            return 4;
+        let rows = 1;
+        let cols = 1;
+
+        if (window.innerHeight > 700) {
+            rows = 3;
+        } else if (window.innerHeight > 350) {
+            rows = 2;
         }
-        return 6;
+
+        if (window.innerWidth > 700) {
+            cols = 3;
+        } else if (window.innerWidth > 350) {
+            cols = 2;
+        }
+
+        // if (window.innerWidth > 700) {
+        //     return 6;
+        // }
+
+        return rows * cols;
+    };
+
+    const filterProjects = () => {
+        return PD.projects.filter((project) =>
+            selectedType === "ALL" ? true : project.type === selectedType
+        );
     };
 
     const [selectedType, setType] = useState("ALL");
@@ -27,22 +47,13 @@ const ProjectDisplay = ({ rendered, setProject }) => {
 
     useEffect(() => {
         setProjectStartIdx(0);
-        setProjects(
-            PD.projects.filter((project) =>
-                selectedType === "ALL" ? true : project.type === selectedType
-            )
-        );
+        setProjects(filterProjects());
     }, [selectedType]);
 
     useEffect(() => {
         setPrevInactive(projectStartIdx === 0);
         setNextInactive(
-            projectStartIdx + numProjects >=
-                PD.projects.filter((project) =>
-                    selectedType === "ALL"
-                        ? true
-                        : project.type === selectedType
-                ).length
+            projectStartIdx + numProjects >= filterProjects().length
         );
     }, [projectStartIdx]);
 
@@ -110,7 +121,6 @@ const ProjectDisplay = ({ rendered, setProject }) => {
                             style={{
                                 backgroundImage: `url(${project.image})`,
                                 animationDelay: `${idx * 0.25}s`,
-                                // WebkitAnimationDelay: `${idx * 0.25}s`,
                             }}
                             onClick={() => setProject(project)}
                         >

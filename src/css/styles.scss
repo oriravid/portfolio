@@ -73,35 +73,45 @@ h3 {
     position: relative;
     height: 100%;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    background-color: $color-white;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 // SECTION
 ////////////////////////////////////////////////////////////////////////////////
 
 .section {
-    position: relative;
     height: 100%;
+    position: relative;
+    padding: 50px 25px;
     scroll-snap-align: start;
-    padding: 25px;
-    overflow-x: hidden;
+
+    @media only screen and (max-width: $mobile) {
+        padding: 25px;
+    }
 }
 
 .section-inner {
     max-width: 1280px;
     margin: 0 auto;
-    // padding: 50px 0;
 }
 
 .section-header {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 25px;
 }
 
 .section-title {
     font-size: 36px;
+
+    @media only screen and (max-width: $mobile) {
+        font-size: 30px;
+    }
 }
 
 // NAV
@@ -173,10 +183,11 @@ h3 {
 ////////////////////////////////////////////////////////////////////////////////
 
 #home {
-    background-color: $color-white;
+    padding: 0;
+    background-color: $color-black;
     display: flex;
     align-items: center;
-    padding: 0;
+    overflow: hidden;
 
     .section-inner {
         background-color: $color-white;
@@ -319,22 +330,16 @@ h3 {
 #projects {
     position: relative;
     background-color: $color-white;
-    box-shadow: 0px 0px 25px rgba(46, 16, 16, 0.6);
 
     .section-inner {
-        display: none;
         height: 100%;
-        flex-flow: column nowrap;
-        overflow: hidden;
-
-        &.active {
-            display: flex;
-        }
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
 
         .section-header,
         #project-nav {
             flex: none;
-            animation: fade-in 1s ease-out forwards;
         }
     }
 
@@ -349,6 +354,11 @@ h3 {
             font-weight: 600;
             border-radius: 7.5px 7.5px 0 0;
 
+            @media only screen and (max-width: $mobile) {
+                padding: 2.5px 10px;
+                font-size: 14px;
+            }
+
             &.active {
                 color: $color-white;
                 font-weight: 700;
@@ -359,30 +369,28 @@ h3 {
     }
 
     #project-list {
-        height: 1px;
-        flex: auto;
-        margin: 25px 0;
+        flex: 1 1;
         display: grid;
-        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
         gap: 25px 25px;
-        grid-template-areas:
-            ". . ."
-            ". . .";
 
-        @media only screen and (max-width: $tablet) {
-            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-            grid-template-areas:
-                ". ."
-                ". .";
+        //height
+        @media only screen and (min-height: 350px) {
+            grid-template-rows: repeat(2, 1fr);
         }
 
-        @media only screen and (max-width: $mobile) {
-            grid-template: initial;
-            grid-auto-rows: 1fr;
-            grid-auto-columns: 1fr;
-            grid-template-areas:
-                "."
-                ".";
+        @media only screen and (min-height: 700px) {
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        //width
+        @media only screen and (min-width: 350px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media only screen and (min-width: 700px) {
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .project-list-item {
@@ -478,29 +486,16 @@ h3 {
                 }
             }
 
-            &:hover {
-                .project-overlay {
-                    opacity: 1;
+            @media only screen and (min-height: $tablet) {
+                &:hover {
+                    .project-overlay {
+                        opacity: 1;
+                    }
+
+                    .project-overlay-inner {
+                        transform: translateY(0);
+                    }
                 }
-
-                .project-overlay-inner {
-                    transform: translateY(0);
-                }
-            }
-        }
-    }
-
-    #project-slider {
-        height: 1px;
-        flex: auto;
-        padding: 7.5px 0;
-
-        #project-slider-inner {
-            height: 100%;
-            overflow-y: scroll;
-
-            img {
-                width: 100%;
             }
         }
     }
@@ -511,6 +506,7 @@ h3 {
     align-items: center;
     justify-content: center;
     filter: drop-shadow($box-shadow-3);
+    margin-top: 25px;
 
     .project-nav-btn {
         padding: 5px 15px;
@@ -559,6 +555,21 @@ h3 {
         border-radius: 7.5px;
         box-shadow: 0px 10px 35px rgba(46, 16, 16, 0.25);
         animation: fade-in 0.2s linear forwards;
+
+        @media only screen and (max-width: $tablet) {
+            width: 75%;
+        }
+
+        @media only screen and (max-width: $mobile) {
+            width: 100%;
+            max-height: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            border-radius: 0;
+            padding: 25px;
+        }
 
         .detail-close {
             position: absolute;
@@ -641,10 +652,12 @@ h3 {
     background-size: cover;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
 
     .section-inner {
-        padding: 0;
+        width: 100%;
+        border-radius: 25px;
+        background-color: $color-white;
 
         > *:not(:last-child) {
             margin-bottom: 25px;
@@ -659,58 +672,112 @@ h3 {
             font-weight: 500;
             letter-spacing: 0.1rem;
         }
-    }
 
-    #about-banner {
-        margin: -25px;
-
-        #about-banner-inner {
-            padding: 40px;
-            background-color: $color-black;
-            color: $color-white;
+        #about-banner {
             display: flex;
-            flex-flow: column nowrap;
             align-items: center;
             justify-content: center;
 
-            h1 {
-                margin-bottom: 12.5px;
-            }
-
-            #about-links {
+            #about-banner-inner {
+                padding: 40px;
+                border-radius: 25px;
+                background-color: $color-black;
+                color: $color-white;
                 display: flex;
-                text-transform: uppercase;
-                font-size: 18px;
-                font-weight: 500;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
 
-                li {
-                    margin-right: 15px;
-                    position: relative;
+                h1 {
+                    margin-bottom: 12.5px;
+                }
 
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        bottom: -3px;
-                        left: 0;
-                        width: 0;
-                        height: 2px;
-                        background-color: $color-blue4;
-                        transition: all 0.2s;
-                    }
+                #about-links {
+                    display: flex;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    font-weight: 500;
 
-                    &:hover:not(:nth-child(even)) {
+                    li {
+                        margin-right: 15px;
+                        position: relative;
+
                         &:after {
-                            width: 100%;
+                            content: "";
+                            position: absolute;
+                            bottom: -3px;
+                            left: 0;
+                            width: 0;
+                            height: 2px;
+                            background-color: $color-blue4;
+                            transition: all 0.2s;
                         }
-                    }
 
-                    a {
-                        color: $color-white;
+                        &:hover:not(:nth-child(even)) {
+                            &:after {
+                                width: 100%;
+                            }
+                        }
+
+                        a {
+                            color: $color-white;
+                        }
                     }
                 }
             }
         }
     }
+
+    // #about-banner {
+    //     margin: 50px -25px;
+
+    //     #about-banner-inner {
+    //         padding: 40px;
+    //         background-color: $color-black;
+    //         color: $color-white;
+    //         display: flex;
+    //         flex-flow: column nowrap;
+    //         align-items: center;
+    //         justify-content: center;
+
+    //         h1 {
+    //             margin-bottom: 12.5px;
+    //         }
+
+    //         #about-links {
+    //             display: flex;
+    //             text-transform: uppercase;
+    //             font-size: 18px;
+    //             font-weight: 500;
+
+    //             li {
+    //                 margin-right: 15px;
+    //                 position: relative;
+
+    //                 &:after {
+    //                     content: "";
+    //                     position: absolute;
+    //                     bottom: -3px;
+    //                     left: 0;
+    //                     width: 0;
+    //                     height: 2px;
+    //                     background-color: $color-blue4;
+    //                     transition: all 0.2s;
+    //                 }
+
+    //                 &:hover:not(:nth-child(even)) {
+    //                     &:after {
+    //                         width: 100%;
+    //                     }
+    //                 }
+
+    //                 a {
+    //                     color: $color-white;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 // ANIMATIONS
