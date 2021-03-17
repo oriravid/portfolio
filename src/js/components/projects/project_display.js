@@ -6,19 +6,19 @@ import * as HELPERS from "../../utils/helpers";
 
 const ProjectDisplay = ({ rendered, setProject }) => {
     const calcNumProjects = () => {
-        let rows = 1;
-        let cols = 1;
+        let cols = 3;
+        let rows = 2;
 
-        if (window.innerHeight > 700) {
-            rows = 3;
-        } else if (window.innerHeight > 350) {
-            rows = 2;
+        if (window.innerWidth < 1100) {
+            cols = 2;
         }
 
-        if (window.innerWidth > 700) {
-            cols = 3;
-        } else if (window.innerWidth > 350) {
-            cols = 2;
+        if (window.innerHeight < 650) {
+            rows = 1;
+        }
+
+        if (window.innerWidth < 400 && window.innerHeight < 650) {
+            return 4;
         }
 
         return rows * cols;
@@ -51,7 +51,7 @@ const ProjectDisplay = ({ rendered, setProject }) => {
         setNextInactive(
             projectStartIdx + numProjects >= filterProjects().length
         );
-    }, [projectStartIdx, numProjects]);
+    }, [projectStartIdx, numProjects, selectedType]);
 
     const renderPrev = () => {
         return (

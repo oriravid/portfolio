@@ -1,15 +1,17 @@
-//int - util
-import * as ICONS from "../../utils/icons";
+//int - images
+import spotifyIcon from "../../../imgs/spotify_icon.png";
+import appleIcon from "../../../imgs/apple_icon.png";
+import externalIcon from "../../../imgs/external_icon.png";
 
 const ProjectLinks = ({ links }) => {
     const linkLogo = (link) => {
         switch (link) {
             case "Apple":
-                return ICONS.appleMusic();
+                return appleIcon;
             case "Spotify":
-                return ICONS.spotify();
+                return spotifyIcon;
             default:
-                return ICONS.external();
+                return externalIcon;
         }
     };
 
@@ -25,7 +27,7 @@ const ProjectLinks = ({ links }) => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                {linkLogo(link)}
+                                <img src={linkLogo(link)} alt={link} />
                             </a>
                         </li>
                     );
