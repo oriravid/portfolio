@@ -73,6 +73,10 @@ h3 {
     background-color: rgb(240, 240, 240);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
+
+    @media (orientation: landscape) and (hover: none) and (pointer: coarse) {
+        height: 100vw;
+    }
 }
 
 // SECTION
@@ -623,6 +627,8 @@ h3 {
 ////////////////////////////////////////////////////////////////////////////////
 
 #about {
+    height: auto;
+    min-height: 100%;
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -730,6 +736,16 @@ h3 {
                 }
             }
         }
+    }
+}
+
+// MOBILE LANDSCAPE
+
+@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
+    #home,
+    #about,
+    #projects {
+        display: none;
     }
 }
 

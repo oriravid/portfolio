@@ -7,10 +7,11 @@ import ReactGA from "react-ga";
 import "./css/resets.css";
 import "./css/styles.scss";
 //int - components
-// import Nav from "./js/components/nav";
 import Home from "./js/components/home";
 import Projects from "./js/components/projects/projects";
 import About from "./js/components/about";
+//int - util
+import * as ICONS from "./js/utils/icons";
 
 //Google Analytics
 function initializeReactGA() {
