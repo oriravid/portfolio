@@ -623,54 +623,77 @@ h3 {
 ////////////////////////////////////////////////////////////////////////////////
 
 #about {
-    height: auto;
-    min-height: 100%;
-    position: relative;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: top;
     background-size: cover;
     display: flex;
-    flex-flow: column nowrap;
     justify-content: center;
+    overflow: scroll;
 
     .section-inner {
-        padding: 25px;
-        border-radius: 25px;
-        background-color: $color-white;
-
-        > *:not(:last-child) {
-            margin-bottom: 25px;
-        }
-
-        h3 {
-            font-size: 24px;
-        }
-
-        .about-text {
-            font-size: 20px;
-            font-weight: 500;
-            letter-spacing: 0.1rem;
-        }
-    }
-
-    #about-banner {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 100px;
 
-        #about-banner-inner {
+        @media only screen and (max-width: $tablet) {
+            flex-direction: column;
+        }
+
+        #about-content {
+            align-self: flex-start;
+            margin-right: 50px;
+
+            @media only screen and (max-width: $tablet) {
+                margin-right: 0;
+                margin-bottom: 25px;
+                align-self: center;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            .about-text {
+                font-size: 22px;
+                font-weight: 500;
+                letter-spacing: 0.05rem;
+
+                @media only screen and (max-width: $mobile) {
+                    font-size: 18px;
+                }
+            }
+
+            > *:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+
+        #about-banner {
             padding: 40px;
             border-radius: 25px;
             background-color: $color-black;
             color: $color-white;
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: center;
+            align-self: flex-end;
+            margin-left: 50px;
+            box-shadow: $box-shadow-1;
+
+            @media only screen and (max-width: $tablet) {
+                margin-left: 0;
+                margin-top: 25px;
+                align-self: flex-end;
+            }
+
+            @media only screen and (max-width: $mobile) {
+                width: 100%;
+                align-self: center;
+                padding: 30px;
+            }
 
             h1 {
-                margin-bottom: 12.5px;
+                margin-bottom: 25px;
+                width: 250px;
+
+                @media only screen and (max-width: $mobile) {
+                    font-size: 28px;
+                }
             }
 
             #about-links {
@@ -681,7 +704,7 @@ h3 {
                 font-weight: 500;
 
                 li {
-                    margin-right: 15px;
+                    margin-right: 7.5px;
                     position: relative;
 
                     &:after {

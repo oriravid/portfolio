@@ -32,7 +32,7 @@ const Home = ({ scrollAmt }) => {
                     translateZ(-${100 * scrollPct}px)
                     perspective(1000px)
                     rotateX(${90 * scrollPct}deg)`,
-                    opacity: `${1 - scrollPct}`,
+                    opacity: `${1 - scrollPct * 1.25}`,
                 }}
                 onAnimationEnd={(e) => {
                     e.currentTarget.classList.remove("animated");
