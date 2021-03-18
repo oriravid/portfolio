@@ -6,6 +6,8 @@ import * as HELPERS from "../../utils/helpers";
 
 const ProjectDisplay = ({ rendered, setProject }) => {
     const calcNumProjects = () => {
+        if (!rendered) return 0;
+
         let cols = 3;
         let rows = 2;
 
@@ -23,6 +25,10 @@ const ProjectDisplay = ({ rendered, setProject }) => {
 
         return rows * cols;
     };
+
+    useEffect(() => {
+        setNumProjects(calcNumProjects());
+    }, [rendered]);
 
     const filterProjects = () => {
         return PD.projects.filter((project) =>

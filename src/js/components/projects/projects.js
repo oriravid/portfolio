@@ -12,7 +12,7 @@ const Projects = ({ inView }) => {
     const [selectedProject, setProject] = useState(null);
 
     useEffect(() => {
-        if (inView === true) setRendered(true);
+        if (inView === true && rendered === false) setRendered(true);
     }, [inView]);
 
     return (
@@ -39,7 +39,7 @@ const Projects = ({ inView }) => {
                                 <h2 id="project-detail-title">
                                     {selectedProject.title}
                                 </h2>
-                                <h3 id="project-detail-title">
+                                <h3 id="project-detail-subtitle">
                                     {selectedProject.subtitle}
                                 </h3>
                                 <span id="project-detail-date">

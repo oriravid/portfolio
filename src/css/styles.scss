@@ -52,7 +52,7 @@ h1 {
 
 h2 {
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 h3 {
@@ -70,7 +70,7 @@ h3 {
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
-    background-color: $color-white;
+    background-color: rgb(240, 240, 240);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
 }
@@ -259,15 +259,18 @@ h3 {
 #projects {
     position: relative;
     background-color: $color-white;
+    box-shadow: 0 0 10px 2.5px rgba(0, 0, 0, 0.25);
 
     .section-inner {
         height: 100%;
-        display: none;
+        display: flex;
         flex-flow: column wrap;
         justify-content: space-between;
+        opacity: 0;
+        transition: all 1.5s;
 
         &.active {
-            display: flex;
+            opacity: 1;
         }
 
         .section-header,
@@ -380,8 +383,12 @@ h3 {
                             display: inline-block;
                         }
 
-                        h3 {
+                        h2 {
                             font-weight: 500;
+                        }
+
+                        h3 {
+                            font-weight: 400;
                         }
                     }
 
@@ -393,7 +400,7 @@ h3 {
                         align-items: center;
 
                         .project-type {
-                            font-weight: 700;
+                            font-weight: 600;
                             color: $color-white;
                             padding: 2.5px 7.5px;
                             border-radius: 5px;
@@ -435,7 +442,6 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: drop-shadow($box-shadow-3);
     margin-top: 25px;
 
     .project-nav-btn {
@@ -444,6 +450,7 @@ h3 {
         color: $color-white;
         background-color: $color-blue1;
         transition: all 0.2s;
+        box-shadow: $box-shadow-3;
 
         @media only screen and (max-width: $mobile) {
             padding: 5px 10px;
@@ -461,6 +468,7 @@ h3 {
         }
 
         &.inactive {
+            box-shadow: $box-shadow-1;
             background-color: rgba(0, 0, 0, 0.2);
         }
     }
@@ -482,7 +490,7 @@ h3 {
     #project-detail-inner {
         position: relative;
         width: 65%;
-        max-width: 1000px;
+        max-width: 900px;
         max-height: 80%;
         overflow-y: scroll;
         padding: 25px 50px;
@@ -513,6 +521,12 @@ h3 {
             fill: $color-black;
             height: 35px;
             width: 35px;
+            transition: all 0.2s;
+
+            &:hover {
+                opacity: 0.75;
+                transform: scale(1.1);
+            }
         }
 
         & > *:not(:last-child) {
@@ -520,7 +534,17 @@ h3 {
         }
 
         #project-detail-header {
+            @media only screen and (max-width: $mobile) {
+                text-align: center;
+            }
+
             #project-detail-title {
+            }
+
+            #project-detail-subtitle {
+                font-weight: 500;
+                margin: 5px 0;
+                // color: rgba(0, 0, 0, 0.65);
             }
 
             #project-detail-date {
@@ -556,14 +580,28 @@ h3 {
             justify-content: space-between;
             align-items: center;
 
+            @media only screen and (max-width: $mobile) {
+                flex-direction: column;
+                text-align: center;
+            }
+
             #project-detail-text {
+                @media only screen and (max-width: $mobile) {
+                    margin-bottom: 5px;
+                }
+
+                @media only screen and (min-width: $mobile) {
+                    margin-right: 20px;
+                }
             }
 
             #project-detail-links {
                 display: flex;
 
                 .project-detail-link-item {
-                    margin-left: 7.5px;
+                    &:not(:last-child) {
+                        margin-right: 7.5px;
+                    }
 
                     img {
                         width: 30px;
@@ -585,6 +623,8 @@ h3 {
 ////////////////////////////////////////////////////////////////////////////////
 
 #about {
+    height: auto;
+    min-height: 100%;
     position: relative;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -594,7 +634,7 @@ h3 {
     justify-content: center;
 
     .section-inner {
-        width: 100%;
+        padding: 25px;
         border-radius: 25px;
         background-color: $color-white;
 
@@ -607,116 +647,67 @@ h3 {
         }
 
         .about-text {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 500;
             letter-spacing: 0.1rem;
         }
+    }
 
-        #about-banner {
+    #about-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+
+        #about-banner-inner {
+            padding: 40px;
+            border-radius: 25px;
+            background-color: $color-black;
+            color: $color-white;
             display: flex;
+            flex-flow: column nowrap;
             align-items: center;
             justify-content: center;
 
-            #about-banner-inner {
-                padding: 40px;
-                border-radius: 25px;
-                background-color: $color-black;
-                color: $color-white;
+            h1 {
+                margin-bottom: 12.5px;
+            }
+
+            #about-links {
                 display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                justify-content: center;
+                flex-wrap: wrap;
+                text-transform: uppercase;
+                font-size: 18px;
+                font-weight: 500;
 
-                h1 {
-                    margin-bottom: 12.5px;
-                }
+                li {
+                    margin-right: 15px;
+                    position: relative;
 
-                #about-links {
-                    display: flex;
-                    text-transform: uppercase;
-                    font-size: 18px;
-                    font-weight: 500;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: -3px;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: $color-blue4;
+                        transition: all 0.2s;
+                    }
 
-                    li {
-                        margin-right: 15px;
-                        position: relative;
-
+                    &:hover:not(:nth-child(even)) {
                         &:after {
-                            content: "";
-                            position: absolute;
-                            bottom: -3px;
-                            left: 0;
-                            width: 0;
-                            height: 2px;
-                            background-color: $color-blue4;
-                            transition: all 0.2s;
+                            width: 100%;
                         }
+                    }
 
-                        &:hover:not(:nth-child(even)) {
-                            &:after {
-                                width: 100%;
-                            }
-                        }
-
-                        a {
-                            color: $color-white;
-                        }
+                    a {
+                        color: $color-white;
                     }
                 }
             }
         }
     }
-
-    // #about-banner {
-    //     margin: 50px -25px;
-
-    //     #about-banner-inner {
-    //         padding: 40px;
-    //         background-color: $color-black;
-    //         color: $color-white;
-    //         display: flex;
-    //         flex-flow: column nowrap;
-    //         align-items: center;
-    //         justify-content: center;
-
-    //         h1 {
-    //             margin-bottom: 12.5px;
-    //         }
-
-    //         #about-links {
-    //             display: flex;
-    //             text-transform: uppercase;
-    //             font-size: 18px;
-    //             font-weight: 500;
-
-    //             li {
-    //                 margin-right: 15px;
-    //                 position: relative;
-
-    //                 &:after {
-    //                     content: "";
-    //                     position: absolute;
-    //                     bottom: -3px;
-    //                     left: 0;
-    //                     width: 0;
-    //                     height: 2px;
-    //                     background-color: $color-blue4;
-    //                     transition: all 0.2s;
-    //                 }
-
-    //                 &:hover:not(:nth-child(even)) {
-    //                     &:after {
-    //                         width: 100%;
-    //                     }
-    //                 }
-
-    //                 a {
-    //                     color: $color-white;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 }
 
 // ANIMATIONS
