@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         return (
-            // <HttpsRedirect>
-            <React.Fragment>
-                <Home scrollAmt={scrollAmt} />
-                <Projects inView={scrollAmt > window.innerHeight / 2} />
-                <About />
-            </React.Fragment>
-            // </HttpsRedirect>
+            <HttpsRedirect>
+                <React.Fragment>
+                    <Home scrollAmt={scrollAmt} />
+                    <Projects inView={scrollAmt > window.innerHeight / 2} />
+                    <About />
+                </React.Fragment>
+            </HttpsRedirect>
         );
     };
 
