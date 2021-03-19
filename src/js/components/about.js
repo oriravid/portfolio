@@ -3,15 +3,30 @@ import React from "react";
 //int - images
 import about_bg from "../../imgs/about5.jpg";
 
-const About = () => {
+const About = ({ scrollAmt }) => {
+    var scrollPct = 1 - scrollAmt / window.innerHeight;
+
+    if (scrollPct > 0) {
+        scrollPct = 0;
+    } else {
+        scrollPct = Math.abs(scrollPct);
+    }
+
     return (
         <div
             className="section"
             id="about"
-            style={{ backgroundImage: `url(${about_bg})` }}
+            style={{
+                backgroundImage: `url(${about_bg})`,
+            }}
         >
             <div className="section-inner">
-                <div id="about-content">
+                <div
+                    id="about-content"
+                    // style={{
+                    //     transform: `translateY(${100 * (1 - scrollPct)}%)`,
+                    // }}
+                >
                     <h3>Hello, I’m Ori</h3>
                     <p className="about-text">
                         I’m a software engineer with an audio engineering

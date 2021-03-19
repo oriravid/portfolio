@@ -675,11 +675,19 @@ h3 {
         #about-banner {
             padding: 40px;
             border-radius: 25px;
-            background-color: $color-black;
+            // background-color: $color-black;
+            background: rgb(51, 57, 59);
+            background: linear-gradient(
+                45deg,
+                rgba(51, 57, 59, 1) 0%,
+                rgba(51, 57, 59, 1) 50%,
+                rgba(86, 92, 94, 1) 100%
+            );
             color: $color-white;
             align-self: flex-end;
             margin-left: 50px;
             box-shadow: $box-shadow-1;
+            animation: float 6s ease-in-out infinite;
 
             @media only screen and (max-width: $tablet) {
                 margin-left: 0;
@@ -812,5 +820,20 @@ h3 {
     }
     100% {
         top: -800px;
+    }
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
     }
 }
