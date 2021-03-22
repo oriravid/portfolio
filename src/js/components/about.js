@@ -1,7 +1,7 @@
 //ext
 import React from "react";
 //int - images
-import about_bg from "../../imgs/about5.jpg";
+import about_bg from "../../imgs/about7.jpeg";
 
 const About = ({ scrollAmt }) => {
     var scrollPct = 1 - scrollAmt / window.innerHeight;

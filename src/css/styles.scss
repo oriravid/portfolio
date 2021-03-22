@@ -638,19 +638,20 @@ h3 {
 
     .section-inner {
         display: flex;
-
-        @media only screen and (max-width: $tablet) {
-            flex-direction: column;
-        }
+        flex-direction: column;
+        align-items: center;
 
         #about-content {
-            align-self: flex-start;
-            margin-right: 50px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: $box-shadow-1;
+            width: 50%;
 
             @media only screen and (max-width: $tablet) {
                 margin-right: 0;
                 margin-bottom: 25px;
-                align-self: center;
+                width: 100%;
             }
 
             h3 {
@@ -658,12 +659,12 @@ h3 {
             }
 
             .about-text {
-                font-size: 22px;
+                font-size: 18px;
                 font-weight: 500;
                 letter-spacing: 0.05rem;
 
                 @media only screen and (max-width: $mobile) {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
 
@@ -673,9 +674,11 @@ h3 {
         }
 
         #about-banner {
+            position: absolute;
+            right: 25px;
+            bottom: 25px;
             padding: 40px;
             border-radius: 25px;
-            // background-color: $color-black;
             background: rgb(51, 57, 59);
             background: linear-gradient(
                 45deg,
@@ -685,19 +688,17 @@ h3 {
             );
             color: $color-white;
             align-self: flex-end;
-            margin-left: 50px;
             box-shadow: $box-shadow-1;
             animation: float 6s ease-in-out infinite;
 
             @media only screen and (max-width: $tablet) {
-                margin-left: 0;
-                margin-top: 25px;
-                align-self: flex-end;
+                position: relative;
+                right: 0;
+                bottom: 0;
             }
 
             @media only screen and (max-width: $mobile) {
                 width: 100%;
-                align-self: center;
                 padding: 30px;
             }
 
