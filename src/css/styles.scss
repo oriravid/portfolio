@@ -642,15 +642,19 @@ h3 {
         align-items: center;
 
         #about-content {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(243, 246, 245, 0.5);
             border-radius: 25px;
             padding: 40px;
-            box-shadow: $box-shadow-1;
+            box-shadow: $box-shadow-2;
             width: 50%;
+
+            @media only screen and (max-width: 1350px) {
+                align-self: flex-start;
+            }
 
             @media only screen and (max-width: $tablet) {
                 margin-right: 0;
-                margin-bottom: 25px;
+                margin-bottom: 50px;
                 width: 100%;
             }
 
@@ -702,7 +706,11 @@ h3 {
                 padding: 30px;
             }
 
-            h1 {
+            .callout {
+                line-height: 1.2;
+                letter-spacing: 0.02em;
+                font-size: 34px;
+                font-weight: 700;
                 margin-bottom: 25px;
                 width: 250px;
 

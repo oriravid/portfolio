@@ -52,7 +52,9 @@ const About = ({ scrollAmt }) => {
                     </p>
                 </div>
                 <div id="about-banner">
-                    <h1>Let's make something beautiful together.</h1>
+                    <div className="callout">
+                        Let's make something <span>beautiful</span> together.
+                    </div>
                     <ul id="about-links">
                         <li>
                             <a href="mailto:ori@oriravid.com">EMail</a>
