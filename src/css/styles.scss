@@ -24,7 +24,7 @@ $mobile: 700px;
 ////////////////////////////////////////////////////////////////////////////////
 html,
 input {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif !important;
     color: $color-black;
 }
 
