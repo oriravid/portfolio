@@ -1,11 +1,11 @@
+//int - css
+import "./css/resets.css";
+import "./css/styles.scss";
 //ext
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import HttpsRedirect from "react-https-redirect";
 import ReactGA from "react-ga";
-//int - css
-import "./css/resets.css";
-import "./css/styles.scss";
 //int - components
 import Home from "./js/components/home";
 import Projects from "./js/components/projects/projects";
