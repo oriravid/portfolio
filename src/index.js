@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <HttpsRedirect>
                 <React.Fragment>
                     <Home scrollAmt={scrollAmt} />
-                    <Projects inView={scrollAmt > window.innerHeight / 2} />
-                    <About scrollAmt={scrollAmt} />
+                    {/* <Projects inView={scrollAmt > window.innerHeight / 2} /> */}
+                    {/* <About scrollAmt={scrollAmt} /> */}
                 </React.Fragment>
             </HttpsRedirect>
         );

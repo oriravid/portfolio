@@ -73,11 +73,11 @@ const Home = ({ scrollAmt }) => {
                     </li>
                 </ul>
             </div>
-            <a href="#projects">
+            {/* <a href="#projects">
                 {ICONS.arrowDown(
                     `home-arrow pointer${scrollPct > 0 ? " inactive" : ""}`
                 )}
-            </a>
+            </a> */}
         </div>
     );
 };
